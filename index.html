@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employ Nation - Connecting Talent with Opportunity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f97316;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --success: #10b981;
+            --gold: #ffd700;
+            --platinum: #e5e4e2;
+            --diamond: #b9f2ff;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{
+            font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#f0f7ff 0%,#e0f2fe 100%);
+            color:var(--dark);line-height:1.6;overflow-x:hidden
+        }
+        header{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);padding:1rem 5%;position:sticky;top:0;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+        .header-container{display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+        .logo{display:flex;align-items:center;color:#fff;text-decoration:none}
+        .logo-icon{font-size:2.2rem;margin-right:12px;color:var(--secondary)}
+        .logo-text{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.8rem}
+        .logo span{color:var(--secondary)}
+        nav ul{display:flex;list-style:none}
+        nav li{margin-left:2rem}
+        nav a{color:#fff;text-decoration:none;font-weight:500;font-size:1.1rem;transition:all .3s ease;padding:.5rem .8rem;border-radius:4px}
+        nav a:hover{background:rgba(255,255,255,.15)}
+        .cta-button{background:var(--secondary);color:#fff;padding:.7rem 1.5rem;border-radius:30px;font-weight:600;transition:all .3s ease;text-decoration:none;display:inline-block;box-shadow:0 4px 6px rgba(251,146,60,.3)}
+        .cta-button:hover{background:#ea580c;transform:translateY(-2px);box-shadow:0 6px 12px rgba(251,146,60,.4)}
+        .hero{background:linear-gradient(rgba(30,58,138,.9),rgba(37,99,235,.85)),url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=2069&q=80');background-size:cover;background-position:center;color:#fff;padding:6rem 5%;text-align:center}
+        .hero-content{max-width:800px;margin:0 auto}
+        .hero h1{font-family:'Montserrat',sans-serif;font-size:3.5rem;margin-bottom:1.5rem;line-height:1.2}
+        .hero p{font-size:1.3rem;margin-bottom:2rem;opacity:.9}
+        .hero-buttons{display:flex;justify-content:center;gap:1.5rem;margin-top:2rem}
+        .social-login{margin:3rem 0}
+        .social-login h3{margin-bottom:1.5rem;color:#fff;font-weight:500}
+        .social-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem}
+        .social-btn{display:flex;align-items:center;padding:.8rem 1.8rem;border-radius:30px;font-weight:500;cursor:pointer;transition:all .3s ease;background:rgba(255,255,255,.15);color:#fff;border:none;font-size:1rem}
+        .social-btn:hover{background:rgba(255,255,255,.25);transform:translateY(-2px)}
+        .social-btn i{margin-right:10px;font-size:1.2rem}
+        .google{background:rgba(234,67,53,.8)} .facebook{background:rgba(59,89,152,.8)}
+        .instagram{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+        .linkedin{background:rgba(0,119,181,.8)} .indeed{background:rgba(0,101,255,.8)}
+        .features{padding:6rem 5%;background:#fff}
+        .section-title{text-align:center;margin-bottom:4rem}
+        .section-title h2{font-family:'Montserrat',sans-serif;font-size:2.5rem;color:var(--dark);margin-bottom:1rem}
+        .section-title p{color:var(--gray);max-width:700px;margin:0 auto;font-size:1.2rem}
+        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;max-width:1400px;margin:0 auto}
+        .feature-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.05);transition:all .4s ease}
+        .feature-card:hover{transform:translateY(-10px);box-shadow:0 15px 35px rgba(0,0,0,.1)}
+        .feature-img{height:200px;overflow:hidden}
+        .feature-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+        .feature-card:hover .feature-img img{transform:scale(1.05)}
+        .feature-content{padding:1.8rem}
+        .feature-content h3{font-size:1.5rem;margin-bottom:1rem;color:var(--dark)}
+        .feature-content p{color:var(--gray);margin-bottom:1.5rem}
+        .job-listings{padding:6rem 5%;background:#fff}
+        .job-card{background:#fff;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.05);transition:all .4s ease;padding:2rem;border:1px solid #e2e8f0}
+        .job-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,.1);border-color:var(--primary)}
+        .job-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}
+        .job-card-title{font-size:1.4rem;font-weight:600;color:var(--dark)}
+        .job-card-company{font-size:1rem;color:var(--primary);font-weight:500;margin-bottom:.5rem}
+        .job-card-details{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;color:var(--gray);margin-bottom:1.5rem}
+        .job-card-details span{display:flex;align-items:center;gap:.5rem}
+        .job-card-description{color:var(--gray);margin-bottom:1.5rem;line-height:1.7}
+        .job-card-actions{display:flex;justify-content:flex-end}
+        .resume-section{padding:6rem 5%;background:linear-gradient(135deg,#e0f2fe 0%,#dbeafe 100%)}
+        .resume-container{max-width:1000px;margin:0 auto;background:#fff;border-radius:15px;box-shadow:0 15px 40px rgba(0,0,0,.08);overflow:hidden;padding:3rem}
+        .resume-header{text-align:center;margin-bottom:2rem}
+        .resume-header h2{font-size:2.2rem;color:var(--dark);margin-bottom:1rem}
+        .resume-header p{color:var(--gray);max-width:700px;margin:0 auto}
+        .resume-options{display:flex;gap:2rem;margin-top:2rem}
+        .resume-option{flex:1;background:#f8fafc;border-radius:12px;padding:2rem;text-align:center;border:1px solid #e2e8f0;transition:all .3s ease}
+        .resume-option:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.1);border-color:var(--primary)}
+        .resume-icon{font-size:3rem;color:var(--primary);margin-bottom:1.5rem}
+        .integration{padding:6rem 5%;background:#fff}
+        .tabs-container{max-width:1000px;margin:0 auto;background:#fff;border-radius:15px;box-shadow:0 15px 40px rgba(0,0,0,.08);overflow:hidden}
+        .tabs-header{display:flex;background:var(--primary);flex-wrap:wrap}
+        .tab-btn{flex:1;padding:1.5rem;background:transparent;border:none;color:rgba(255,255,255,.8);font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:500;cursor:pointer;transition:all .3s ease;border-bottom:3px solid transparent;min-width:200px}
+        .tab-btn.active{background:rgba(255,255,255,.15);color:#fff;border-bottom:3px solid var(--secondary)}
+        .tab-btn i{margin-right:10px;font-size:1.2rem}
+        .tabs-content{padding:3rem}
+        .tab-pane{display:none;animation:fadeIn .5s ease}
+        .tab-pane.active{display:block}
+        .tab-content-header{display:flex;align-items:center;margin-bottom:2rem}
+        .tab-icon{width:70px;height:70px;background:rgba(37,99,235,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:1.5rem}
+        .tab-icon i{font-size:2rem;color:var(--primary)}
+        .tab-text h3{font-size:1.8rem;color:var(--dark);margin-bottom:.5rem}
+        .tab-text p{color:var(--gray)}
+        .integration-details{display:flex;gap:2rem}
+        .integration-info{flex:1}
+        .integration-info p{margin-bottom:1.5rem;line-height:1.8}
+        .integration-diagram{flex:1;background:#f8fafc;border-radius:10px;padding:1.5rem;border:1px solid #e2e8f0}
+        .diagram-title{text-align:center;margin-bottom:1.5rem;color:var(--dark);font-weight:600}
+        .diagram-flow{display:flex;justify-content:space-around;align-items:center;position:relative}
+        .flow-step{display:flex;flex-direction:column;align-items:center;z-index:1}
+        .step-icon{width:50px;height:50px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,.08);margin-bottom:1rem}
+        .step-icon i{color:var(--primary)}
+        .step-text{font-size:.9rem;text-align:center;color:var(--dark);font-weight:500}
+        .flow-arrow{position:absolute;top:25px;left:25%;width:50%;height:2px;background:#cbd5e1}
+        .flow-arrow::after{content:'';position:absolute;right:-6px;top:-4px;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:8px solid #cbd5e1}
+        .backend-note{background:#fffbeb;border-left:4px solid #f59e0b;padding:1.5rem;border-radius:0 8px 8px 0;margin-top:2rem}
+        .backend-note h4{display:flex;align-items:center;color:#b45309;margin-bottom:.8rem}
+        .backend-note h4 i{margin-right:10px}
+        .backend-note p{color:#78350f}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+        .premium{padding:6rem 5%;background:#fff}
+        .package-tabs{display:flex;justify-content:center;margin-bottom:3rem;gap:1rem}
+        .package-tab{padding:1rem 2rem;border:none;background:#e2e8f0;border-radius:30px;font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:500;cursor:pointer;transition:all .3s ease}
+        .package-tab.active{background:var(--primary);color:#fff}
+        .packages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+        .package-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08);transition:all .4s ease;position:relative;border:2px solid #e2e8f0}
+        .package-card:hover{transform:translateY(-10px);box-shadow:0 15px 40px rgba(0,0,0,.12)}
+        .package-header{padding:2rem;text-align:center;color:#fff}
+        .basic .package-header{background:linear-gradient(135deg,#94a3b8 0%,#64748b 100%)}
+        .pro .package-header{background:linear-gradient(135deg,#f59e0b 0%,#d97706 100%)}
+        .business .package-header{background:linear-gradient(135deg,#0ea5e9 0%,#0284c7 100%)}
+        .enterprise .package-header{background:linear-gradient(135deg,#8b5cf6 0%,#7c3aed 100%)}
+        .package-badge{position:absolute;top:20px;right:-30px;background:var(--secondary);color:#fff;padding:.5rem 2rem;transform:rotate(45deg);font-weight:600;font-size:.9rem;width:150px;text-align:center}
+        .package-title{font-size:1.8rem;margin-bottom:.5rem;font-weight:700}
+        .package-price{font-size:2.5rem;font-weight:800;margin-bottom:.5rem}
+        .package-price span{font-size:1rem;font-weight:400}
+        .package-period{opacity:.9}
+        .package-features{padding:2rem}
+        .package-features ul{list-style:none;margin-bottom:2rem}
+        .package-features li{padding:.8rem 0;border-bottom:1px solid #e2e8f0;display:flex;align-items:center}
+        .package-features li i{margin-right:10px;color:var(--success);font-size:1.2rem}
+        .package-button{display:block;width:100%;padding:1rem;background:var(--primary);color:#fff;border:none;border-radius:8px;font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:600;cursor:pointer;transition:background .3s ease}
+        .package-button:hover{background:var(--primary-dark)}
+        .testimonials{padding:6rem 5%;background:linear-gradient(135deg,#f0f7ff 0%,#e0f2fe 100%)}
+        .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2.5rem;max-width:1400px;margin:0 auto}
+        .testimonial-card{background:#fff;border-radius:12px;padding:2.5rem;box-shadow:0 10px 25px rgba(0,0,0,.05);position:relative}
+        .testimonial-text{font-style:italic;margin-bottom:1.5rem;color:var(--dark);position:relative;z-index:1}
+        .testimonial-author{display:flex;align-items:center}
+        .author-img{width:50px;height:50px;border-radius:50%;overflow:hidden;margin-right:15px;background:var(--gray)}
+        .author-info h4{font-weight:600;color:var(--dark)}
+        .author-info p{color:var(--gray);font-size:.9rem}
+        .contact{padding:6rem 5%;background:#fff}
+        .contact-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3rem}
+        .contact-info{display:flex;flex-direction:column;gap:1.5rem}
+        .contact-item{display:flex;align-items:flex-start;gap:1rem}
+        .contact-icon{font-size:1.5rem;color:var(--primary);min-width:40px}
+        .contact-text h4{font-size:1.2rem;margin-bottom:.3rem;color:var(--dark)}
+        .contact-text p,.contact-text a{color:var(--gray);text-decoration:none;transition:color .3s ease}
+        .contact-text a:hover{color:var(--primary)}
+        .contact-form{background:#f8fafc;padding:2.5rem;border-radius:12px}
+        .form-group{margin-bottom:1.5rem}
+        .form-group label{display:block;margin-bottom:.5rem;font-weight:500;color:var(--dark)}
+        .form-group input,.form-group textarea{width:100%;padding:.8rem 1rem;border:1px solid #cbd5e1;border-radius:8px;font-family:'Poppins',sans-serif;font-size:1rem}
+        .form-group textarea{height:150px;resize:vertical}
+        footer{background:var(--dark);color:#fff;padding:4rem 5% 2rem}
+        .footer-container{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:3rem}
+        .footer-logo{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;margin-bottom:1rem}
+        .footer-logo span{color:var(--secondary)}
+        .footer-about p{color:#cbd5e1;margin-bottom:1.5rem}
+        .footer-links h4{font-size:1.3rem;margin-bottom:1.5rem;position:relative}
+        .footer-links h4::after{content:'';position:absolute;bottom:-8px;left:0;width:50px;height:3px;background:var(--secondary)}
+        .footer-links ul{list-style:none}
+        .footer-links li{margin-bottom:.8rem}
+        .footer-links a{color:#cbd5e1;text-decoration:none;transition:color .3s ease}
+        .footer-links a:hover{color:var(--secondary)}
+        .footer-bottom{max-width:1400px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid #334155;text-align:center;color:#94a3b8}
+        .credit a{color:var(--secondary);text-decoration:none;font-weight:600}
+        .chat-widget{position:fixed;bottom:30px;right:30px;z-index:1000}
+        .chat-button{width:60px;height:60px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 15px rgba(37,99,235,.4);transition:all .3s ease}
+        .chat-button:hover{background:var(--primary-dark);transform:scale(1.1)}
+        .chat-box{position:absolute;bottom:80px;right:0;width:350px;height:450px;background:#fff;border-radius:15px;box-shadow:0 10px 40px rgba(0,0,0,.15);display:none;flex-direction:column;overflow:hidden;transform-origin:bottom right;animation:scaleUp .3s ease}
+        @keyframes scaleUp{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+        .chat-box.active{display:flex}
+        .chat-header{background:var(--primary);color:#fff;padding:1.2rem;display:flex;justify-content:space-between;align-items:center}
+        .chat-header h3{font-size:1.2rem}
+        .close-chat{background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer}
+        .chat-messages{flex:1;padding:1.5rem;overflow-y:auto;display:flex;flex-direction:column;gap:1rem}
+        .message{max-width:80%;padding:.8rem 1.2rem;border-radius:18px;font-size:.95rem;line-height:1.4;animation:fadeIn .3s ease}
+        .received{background:#f1f5f9;align-self:flex-start;border-bottom-left-radius:5px}
+        .sent{background:var(--primary);color:#fff;align-self:flex-end;border-bottom-right-radius:5px}
+        .chat-input{display:flex;padding:1rem;background:#f8fafc;border-top:1px solid #e2e8f0}
+        .chat-input input{flex:1;padding:.8rem 1rem;border:1px solid #cbd5e1;border-radius:30px;font-family:'Poppins',sans-serif;font-size:.95rem}
+        .send-button{background:var(--primary);color:#fff;border:none;width:40px;height:40px;border-radius:50%;margin-left:.8rem;cursor:pointer;transition:background .3s ease}
+        .send-button:hover{background:var(--primary-dark)}
+        @media (max-width: 992px){
+            .hero h1{font-size:2.8rem}
+            .hero-buttons{flex-direction:column;align-items:center}
+            .integration-details{flex-direction:column}
+            .tab-btn{padding:1rem;font-size:.9rem}
+            .resume-options{flex-direction:column}
+        }
+        @media (max-width: 768px){
+            .header-container{flex-direction:column}
+            nav{margin:1.5rem 0}
+            nav ul{flex-direction:column;align-items:center}
+            nav li{margin:.5rem 0}
+            .hero h1{font-size:2.3rem}
+            .hero p{font-size:1.1rem}
+            .social-buttons{flex-direction:column;align-items:center}
+            .social-btn{width:80%}
+            .chat-box{width:300px;height:400px}
+            .tabs-header{flex-direction:column}
+            .package-tabs{flex-direction:column}
+        }
+        .auth-message {padding: 10px; margin: 10px 0; border-radius: 5px; text-align: center;}
+        .auth-success {background: #dcfce7; color: #166534;}
+        .auth-error {background: #fee2e2; color: #b91c1c;}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fas fa-globe-americas"></i></div>
+                <div class="logo-text">Employ<span>Nation</span></div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#integration">Integration</a></li>
+                    <li><a href="#premium">Premium</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div style="display:flex;gap:.6rem;align-items:center">
+                <a id="openAuth" href="javascript:void(0)" class="cta-button">Login</a>
+                <a href="#premium" class="cta-button">Post a Job</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Connecting Talent with Opportunity</h1>
+            <p>India's premier platform for job seekers and employers to find their perfect match</p>
+            <div class="social-login">
+                <h3>Login with your account</h3>
+                <div class="social-buttons">
+                    <button class="social-btn google" id="heroGoogle"><i class="fab fa-google"></i> Gmail</button>
+                    <button class="social-btn facebook" id="heroFacebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                    <button class="social-btn instagram" id="heroInstagram"><i class="fab fa-instagram"></i> Instagram</button>
+                    <button class="social-btn linkedin" id="heroLinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</button>
+                    <button class="social-btn indeed" id="heroIndeed"><i class="fas fa-briefcase"></i> Indeed</button>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#resume" class="cta-button">Find a Job</a>
+                <a href="#premium" class="cta-button">Hire Talent</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="section-title">
+            <h2>Why Choose Employ Nation?</h2>
+            <p>We provide innovative solutions to connect employers with the best talent across India</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-img">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1740&q=80" alt="Job Search">
+                </div>
+                <div class="feature-content">
+                    <h3>Smart Job Matching</h3>
+                    <p>Our AI-powered algorithm matches your skills and preferences with the perfect job opportunities.</p>
+                    <a href="#jobs" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-img">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1740&q=80" alt="Recruitment">
+                </div>
+                <div class="feature-content">
+                    <h3>Employer Solutions</h3>
+                    <p>Advanced tools to streamline your recruitment process and find the best candidates faster.</p>
+                    <a href="#employers" class="cta-button">Learn More</a>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-img">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1740&q=80" alt="Career Development">
+                </div>
+                <div class="feature-content">
+                    <h3>Career Development</h3>
+                    <p>Resources, courses, and mentorship to help you grow professionally and achieve your goals.</p>
+                    <a href="#resources" class="cta-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="job-listings" id="jobs">
+        <div class="section-title">
+            <h2>Latest Job Openings</h2>
+            <p>Explore the most recent job opportunities from top employers</p>
+        </div>
+        <div class="features-grid" id="jobs-grid-container">
+            <!-- Job cards will be inserted here by JavaScript -->
+        </div>
+    </section>
+
+    <section class="resume-section" id="resume">
+        <div class="resume-container">
+            <div class="resume-header">
+                <h2>Post Your Resume in Seconds</h2>
+                <p>Get discovered by top employers with our seamless resume posting options</p>
+            </div>
+            <div class="resume-options">
+                <div class="resume-option">
+                    <div class="resume-icon"><i class="fas fa-file-upload"></i></div>
+                    <h3>Upload Resume</h3>
+                    <p>Upload your existing resume in PDF, DOC, or DOCX format</p>
+                    <div class="integration-badge">Instant Processing</div>
+                    <button class="cta-button" id="uploadResumeBtn">Upload Now</button>
+                </div>
+                <div class="resume-option">
+                    <div class="resume-icon"><i class="fab fa-linkedin"></i></div>
+                    <h3>Import from LinkedIn</h3>
+                    <p>Seamlessly import your LinkedIn profile as a resume</p>
+                    <div class="integration-badge">Direct Integration</div>
+                    <button class="cta-button" id="importLinkedIn">Connect LinkedIn</button>
+                </div>
+                <div class="resume-option">
+                    <div class="resume-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Import from Indeed</h3>
+                    <p>Import your Indeed profile and resume with one click</p>
+                    <div class="integration-badge">Direct Integration</div>
+                    <button class="cta-button" id="importIndeed">Connect Indeed</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="integration" id="integration">
+        <div class="section-title">
+            <h2>Advanced Platform Features</h2>
+            <p>These functionalities require backend integration for full implementation</p>
+        </div>
+        <div class="tabs-container">
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="social-login"><i class="fas fa-sign-in-alt"></i> Social Login</button>
+                <button class="tab-btn" data-tab="job-matching"><i class="fas fa-robot"></i> AI Job Matching</button>
+                <button class="tab-btn" data-tab="resume-parser"><i class="fas fa-file-alt"></i> Resume Parsing</button>
+                <button class="tab-btn" data-tab="notifications"><i class="fas fa-bell"></i> Notifications</button>
+            </div>
+            <div class="tabs-content">
+                <div class="tab-pane active" id="social-login">
+                    <div class="tab-content-header">
+                        <div class="tab-icon"><i class="fas fa-sign-in-alt"></i></div>
+                        <div class="tab-text"><h3>Social Media Login Integration</h3><p>Secure authentication using popular social platforms</p></div>
+                    </div>
+                    <div class="integration-details">
+                        <div class="integration-info">
+                            <p>Allow users to sign in using existing social accounts. We use OAuth 2.0 for secure, privacy-preserving authentication.</p>
+                            <p>With user permission, basic profile info can pre-fill their account.</p>
+                            <div class="backend-note">
+                                <h4><i class="fas fa-server"></i> Backend Implementation Required</h4>
+                                <p>For more providers than Google, server-side token verification and account linking are needed.</p>
+                            </div>
+                        </div>
+                        <div class="integration-diagram">
+                            <div class="diagram-title">Authentication Flow</div>
+                            <div class="diagram-flow">
+                                <div class="flow-step"><div class="step-icon"><i class="fas fa-user"></i></div><div class="step-text">User</div></div>
+                                <div class="flow-step"><div class="step-icon"><i class="fas fa-globe"></i></div><div class="step-text">Employ Nation</div></div>
+                                <div class="flow-step"><div class="step-icon"><i class="fab fa-google"></i></div><div class="step-text">Social Platform</div></div>
+                                <div class="flow-arrow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="job-matching">
+                    <div class="tab-content-header"><div class="tab-icon"><i class="fas fa-robot"></i></div><div class="tab-text"><h3>AI-Powered Job Matching</h3><p>Intelligent matching of candidates with opportunities</p></div></div>
+                    <div class="integration-details">
+                        <div class="integration-info">
+                            <p>Algorithms evaluate skills, experience, and preferences to recommend relevant roles.</p>
+                            <div class="backend-note"><h4><i class="fas fa-server"></i> Backend Implementation Required</h4><p>Requires ML services and data pipelines.</p></div>
+                        </div>
+                        <div class="integration-diagram">
+                            <div class="diagram-title">Matching Process</div>
+                            <div class="diagram-flow">
+                                <div class="flow-step"><div class="step-icon"><i class="fas fa-user-graduate"></i></div><div class="step-text">Candidate</div></div>
+                                <div class="flow-step"><div class="step-icon"><i class="fas fa-cogs"></i></div><div class="step-text">AI Engine</div></div>
+                                <div class="flow-step"><div class="step-icon"><i class="fas fa-briefcase"></i></div><div class="step-text">Jobs</div></div>
+                                <div class="flow-arrow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="resume-parser">
+                    <div class="tab-content-header"><div class="tab-icon"><i class="fas fa-file-alt"></i></div><div class="tab-text"><h3>Resume Parsing & Analysis</h3><p>Automated extraction of candidate information</p></div></div>
+                    <div class="integration-details">
+                        <div class="integration-info">
+                            <p>Extracts structured data (experience, education, skills) from uploaded resumes.</p>
+                            <div class="backend-note"><h4><i class="fas fa-server"></i> Backend Implementation Required</h4><p>Needs document processing and storage services.</p></div>
+                        </div>
+                        <div class="integration-diagram">
+                            <div class="diagram-title">Parsing Workflow</div>
+                            <div class="diagram-flow">
+                                <div class="flow-step"><div class="step-icon"><i class="fas fa-file-upload"></i></div><div class="step-text">Upload</div></div>
+                                <div class="flow-step"><div class="step-icon"><i class="fas fa-cogs"></i></div><div class="step-text">Parser</div></div>
+                                <div class="flow-step"><div class="step-icon"><i class="fas fa-database"></i></div><div class="step-text">Structured Data</div></div>
+                                <div class="flow-arrow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="notifications">
+                    <div class="tab-content-header"><div class="tab-icon"><i class="fas fa-bell"></i></div><div class="tab-text"><h3>Real-time Notifications</h3><p>Instant updates for job seekers and employers</p></div></div>
+                    <div class="integration-details">
+                        <div class="integration-info">
+                            <p>Alerts for new matches, application status, and messages via email/push.</p>
+                            <div class="backend-note"><h4><i class="fas fa-server"></i> Backend Implementation Required</h4><p>Integrations like Firebase Cloud Messaging and SMTP are needed.</p></div>
+                        </div>
+                        <div class="integration-diagram">
+                            <div class="diagram-title">Notification Flow</div>
+                            <div class="diagram-flow">
+                                <div class="flow-step"><div class="step-icon"><i class="fas fa-database"></i></div><div class="step-text">Event</div></div>
+                                <div class="flow-step"><div class="step-icon"><i class="fas fa-server"></i></div><div class="step-text">Service</div></div>
+                                <div class="flow-step"><div class="step-icon"><i class="fas fa-mobile-alt"></i></div><div class="step-text">Devices</div></div>
+                                <div class="flow-arrow"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="premium" id="premium">
+        <div class="section-title">
+            <h2>Premium Services</h2>
+            <p>Unlock exclusive features with our premium packages</p>
+        </div>
+        <div class="package-tabs">
+            <button class="package-tab active" data-category="job-seekers">For Job Seekers</button>
+            <button class="package-tab" data-category="employers">For Employers</button>
+        </div>
+        <div class="packages-grid" id="job-seekers">
+            <div class="package-card basic">
+                <div class="package-header"><h3 class="package-title">Starter</h3><div class="package-price">₹499<span>/month</span></div><div class="package-period">Perfect for new job seekers</div></div>
+                <div class="package-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Apply to 50 jobs/month</li>
+                        <li><i class="fas fa-check"></i> Resume visibility: Medium</li>
+                        <li><i class="fas fa-check"></i> Basic job alerts</li>
+                        <li><i class="fas fa-check"></i> Profile analytics dashboard</li>
+                        <li><i class="fas fa-times"></i> AI Resume Builder</li>
+                        <li><i class="fas fa-times"></i> Priority application</li>
+                        <li><i class="fas fa-times"></i> Career coaching sessions</li>
+                    </ul>
+                    <button class="package-button" data-plan="Starter" data-amount="49900">Get Started</button>
+                </div>
+            </div>
+            <div class="package-card pro">
+                <div class="package-badge">Most Popular</div>
+                <div class="package-header"><h3 class="package-title">Professional</h3><div class="package-price">₹999<span>/month</span></div><div class="package-period">For serious job seekers</div></div>
+                <div class="package-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Unlimited job applications</li>
+                        <li><i class="fas fa-check"></i> Resume visibility: High</li>
+                        <li><i class="fas fa-check"></i> Advanced job alerts</li>
+                        <li><i class="fas fa-check"></i> Premium profile analytics</li>
+                        <li><i class="fas fa-check"></i> AI Resume Builder</li>
+                        <li><i class="fas fa-check"></i> Priority application</li>
+                        <li><i class="fas fa-times"></i> Career coaching sessions</li>
+                    </ul>
+                    <button class="package-button" data-plan="Professional" data-amount="99900">Get Started</button>
+                </div>
+            </div>
+            <div class="package-card enterprise">
+                <div class="package-header"><h3 class="package-title">Executive</h3><div class="package-price">₹1999<span>/month</span></div><div class="package-period">For career advancement</div></div>
+                <div class="package-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Unlimited job applications</li>
+                        <li><i class="fas fa-check"></i> Resume visibility: Top</li>
+                        <li><i class="fas fa-check"></i> Custom job alerts</li>
+                        <li><i class="fas fa-check"></i> Advanced profile analytics</li>
+                        <li><i class="fas fa-check"></i> AI Resume Builder + Review</li>
+                        <li><i class="fas fa-check"></i> Priority application</li>
+                        <li><i class="fas fa-check"></i> 4 Career coaching sessions</li>
+                    </ul>
+                    <button class="package-button" data-plan="Executive" data-amount="199900">Get Started</button>
+                </div>
+            </div>
+        </div>
+        <div class="packages-grid" id="employers" style="display:none;">
+            <div class="package-card basic">
+                <div class="package-header"><h3 class="package-title">Recruiter</h3><div class="package-price">₹4999<span>/month</span></div><div class="package-period">For small businesses</div></div>
+                <div class="package-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> 5 job postings/month</li>
+                        <li><i class="fas fa-check"></i> 100 resume views</li>
+                        <li><i class="fas fa-check"></i> Basic candidate search</li>
+                        <li><i class="fas fa-check"></i> Company profile</li>
+                        <li><i class="fas fa-times"></i> AI candidate matching</li>
+                        <li><i class="fas fa-times"></i> Priority support</li>
+                        <li><i class="fas fa-times"></i> Advanced analytics</li>
+                    </ul>
+                    <button class="package-button" data-plan="Recruiter" data-amount="499900">Get Started</button>
+                </div>
+            </div>
+            <div class="package-card pro">
+                <div class="package-badge">Most Popular</div>
+                <div class="package-header"><h3 class="package-title">Business</h3><div class="package-price">₹9999<span>/month</span></div><div class="package-period">For growing companies</div></div>
+                <div class="package-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> 15 job postings/month</li>
+                        <li><i class="fas fa-check"></i> Unlimited resume views</li>
+                        <li><i class="fas fa-check"></i> Advanced candidate search</li>
+                        <li><i class="fas fa-check"></i> Enhanced company profile</li>
+                        <li><i class="fas fa-check"></i> AI candidate matching</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Basic analytics dashboard</li>
+                    </ul>
+                    <button class="package-button" data-plan="Business" data-amount="999900">Get Started</button>
+                </div>
+            </div>
+            <div class="package-card enterprise">
+                <div class="package-header"><h3 class="package-title">Enterprise</h3><div class="package-price">₹19999<span>/month</span></div><div class="package-period">For large organizations</div></div>
+                <div class="package-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Unlimited job postings</li>
+                        <li><i class="fas fa-check"></i> Unlimited resume views</li>
+                        <li><i class="fas fa-check"></i> Premium candidate search</li>
+                        <li><i class="fas fa-check"></i> Featured company profile</li>
+                        <li><i class="fas fa-check"></i> Advanced AI candidate matching</li>
+                        <li><i class="fas fa-check"></i> 24/7 Dedicated support</li>
+                        <li><i class="fas fa-check"></i> Advanced analytics suite</li>
+                    </ul>
+                    <button class="package-button" data-plan="Enterprise" data-amount="1999900">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>Success Stories</h2>
+            <p>Hear from people who found their dream jobs through Employ Nation</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">Employ Nation helped me find my perfect job in just 2 weeks! The platform is user-friendly and the job recommendations were spot on.</p>
+                <div class="testimonial-author"><div class="author-img"></div><div class="author-info"><h4>Rajesh Sharma</h4><p>Senior Developer at Tech Solutions</p></div></div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">As a recruiter, I've found Employ Nation to be the most effective platform for finding qualified candidates. The filtering tools saved us countless hours.</p>
+                <div class="testimonial-author"><div class="author-img"></div><div class="author-info"><h4>Priya Patel</h4><p>HR Manager at Global Innovations</p></div></div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">The resume import feature saved me so much time! I was able to apply to 20 jobs in under an hour using my LinkedIn profile.</p>
+                <div class="testimonial-author"><div class="author-img"></div><div class="author-info"><h4>Sanjay Mehta</h4><p>Marketing Director at BrandWorks</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our team for any inquiries or support</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div class="contact-text"><h4>Email</h4><a href="mailto:info@employnation.in">info@employnation.in</a></div></div>
+                <div class="contact-item"><div class="contact-icon"><i class="fas fa-phone-alt"></i></div><div class="contact-text"><h4>Phone</h4><p>8437016711, 9876873027</p></div></div>
+                <div class="contact-item"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-text"><h4>Office Address</h4><p>SCF 81, First Floor, Phase 6, Near New Bus Stand, Mohali, Punjab - 160055</p></div></div>
+                <div class="contact-item"><div class="contact-icon"><i class="fas fa-clock"></i></div><div class="contact-text"><h4>Working Hours</h4><p>Mon–Fri: 9:00 AM - 6:00 PM</p><p>Sat: 10:00 AM - 2:00 PM</p></div></div>
+            </div>
+            <div class="contact-form">
+                <h3>Send us a message</h3>
+                <form id="contactForm" style="margin-top:1rem">
+                    <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" placeholder="Enter your name" required></div>
+                    <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" placeholder="Enter your email" required></div>
+                    <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" placeholder="Enter subject" required></div>
+                    <div class="form-group"><label for="message">Message</label><textarea id="message" placeholder="Type your message here" required></textarea></div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">Employ<span>Nation</span></div>
+                <p>India's leading job portal connecting talented professionals with top employers across various industries.</p>
+                <div class="social-buttons">
+                    <button class="social-btn"><i class="fab fa-facebook-f"></i></button>
+                    <button class="social-btn"><i class="fab fa-twitter"></i></button>
+                    <button class="social-btn"><i class="fab fa-linkedin-in"></i></button>
+                    <button class="social-btn"><i class="fab fa-instagram"></i></button>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#premium">Premium Plans</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Job Seekers</h4>
+                <ul>
+                    <li><a href="#resume">Create Profile</a></li>
+                    <li><a href="#jobs">Job Search</a></li>
+                    <li><a href="#resources">Career Advice</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Employers</h4>
+                <ul>
+                    <li><a href="#employers">Post a Job</a></li>
+                    <li><a href="#premium">Pricing Plans</a></li>
+                    <li><a href="#contact">Employer Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Employ Nation. All rights reserved.</p>
+            <p class="credit">Developed by <a href="https://www.britpunjabi.com" target="_blank" rel="noopener">Progressive Build Solutions</a></p>
+        </div>
+    </footer>
+
+    <!-- Chat bubble -->
+    <div class="chat-widget" id="inlineChatWidget">
+        <div class="chat-button" id="chatButton"><i class="fas fa-comment-dots"></i></div>
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <h3>Employ Nation Support</h3>
+                <button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message received">Hello! Welcome to Employ Nation. How can I help you today?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message..." />
+                <button class="send-button" id="sendButton"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="authModalBackdrop" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,.6);z-index:2000;align-items:center;justify-content:center">
+        <div style="background:#fff;border-radius:10px;width:420px;max-width:94%;padding:1rem;font-family:Poppins">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+                <strong>Sign in / Sign up</strong>
+                <button id="authClose" style="background:none;border:none;font-size:1.1rem;cursor:pointer">✕</button>
+            </div>
+            <div style="display:flex;gap:.5rem;margin-bottom:.6rem">
+                <button id="authTabLogin" style="flex:1;padding:.6rem;border-radius:8px;border:1px solid #e2e8f0;background:#f8fafc">Login</button>
+                <button id="authTabSignup" style="flex:1;padding:.6rem;border-radius:8px;border:1px solid #e2e8f0;background:#fff">Sign up</button>
+            </div>
+            <div id="authLoginView">
+                <div id="loginMessage" class="auth-message" style="display:none;"></div>
+                <form id="authLoginForm" style="display:grid;gap:.6rem">
+                    <input name="email" placeholder="Email" type="email" required style="padding:.6rem;border:1px solid #e2e8f0;border-radius:8px"/>
+                    <input name="password" placeholder="Password" type="password" required style="padding:.6rem;border:1px solid #e2e8f0;border-radius:8px"/>
+                    <button type="submit" class="cta-button" style="width:100%">Login</button>
+                </form>
+                <div style="margin-top:.6rem;display:flex;gap:.6rem">
+                    <button id="modalGoogle" class="social-btn google" style="flex:1"><i class="fab fa-google"></i> Google</button>
+                </div>
+            </div>
+            <div id="authSignupView" style="display:none">
+                <div id="signupMessage" class="auth-message" style="display:none;"></div>
+                <form id="authSignupForm" style="display:grid;gap:.6rem">
+                    <input name="name" placeholder="Full name" required style="padding:.6rem;border:1px solid #e2e8f0;border-radius:8px"/>
+                    <input name="email" placeholder="Email" type="email" required style="padding:.6rem;border:1px solid #e2e8f0;border-radius:8px"/>
+                    <input name="password" placeholder="Password" type="password" required minlength="6" style="padding:.6rem;border:1px solid #e2e8f0;border-radius:8px"/>
+                    <button type="submit" class="cta-button" style="width:100%">Create account</button>
+                </form>
+                <div style="margin-top:.6rem;display:flex;gap:.6rem">
+                    <button id="modalGoogleSignup" class="social-btn google" style="flex:1"><i class="fab fa-google"></i> Google</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics-compat.js"></script>
+
+    <script>
+    (function(){
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDsxTLXInMv6EyDQ9NEH2CzvqpOT0fP-XU",
+            authDomain: "tricity-jobs-connect.firebaseapp.com",
+            projectId: "tricity-jobs-connect",
+            storageBucket: "tricity-jobs-connect.firebasestorage.app",
+            messagingSenderId: "853797665993",
+            appId: "1:853797665993:web:2453bd4ea639a7af8da118",
+            measurementId: "G-LHYT4QZYYE"
+        };
+
+        // Initialize Firebase
+        try {
+            firebase.initializeApp(firebaseConfig);
+            const analytics = firebase.analytics();
+            console.log("Firebase initialized successfully");
+        } catch (err) {
+            console.error('Firebase initialization error:', err);
+        }
+
+        // Firebase Services
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const storage = firebase.storage();
+
+        // Helper to create user profile in Firestore
+        function createUserProfile(user, additionalData = {}) {
+            if (!user) return Promise.reject("No user provided");
+
+            const userRef = db.collection('users').doc(user.uid);
+
+            return userRef.get().then((doc) => {
+                if (!doc.exists) {
+                    // New user, create profile
+                    const profileData = {
+                        uid: user.uid,
+                        email: user.email,
+                        displayName: user.displayName || additionalData.name || 'Anonymous',
+                        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                    };
+                    console.log("Creating new user profile:", profileData);
+                    return userRef.set(profileData);
+                }
+                console.log("User profile already exists for:", user.uid);
+                return Promise.resolve("Profile already exists.");
+            }).catch(error => {
+                console.error("Error creating user profile:", error);
+                return Promise.reject(error);
+            });
+        }
+
+        // Smooth anchors
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const id = a.getAttribute('href').slice(1);
+                const target = document.getElementById(id);
+                if(target){
+                    e.preventDefault();
+                    target.scrollIntoView({behavior: 'smooth'});
+                }
+            });
+        });
+
+        // Feature tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabPanes.forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Premium tabs
+        const packageTabs = document.querySelectorAll('.package-tab');
+        const jobSeekersSection = document.getElementById('job-seekers');
+        const employersSection = document.getElementById('employers');
+        packageTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                packageTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const category = tab.getAttribute('data-category');
+                jobSeekersSection.style.display = category === 'job-seekers' ? 'grid' : 'none';
+                employersSection.style.display = category === 'employers' ? 'grid' : 'none';
+            });
+        });
+
+        // Contact form
+        const contactForm = document.getElementById('contactForm');
+        if(contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Message sent! Our team will contact you shortly.');
+                contactForm.reset();
+            });
+        }
+
+        // Resume options
+        const uploadResumeBtn = document.getElementById('uploadResumeBtn');
+        const importLinkedInBtn = document.getElementById('importLinkedIn');
+        const importIndeedBtn = document.getElementById('importIndeed');
+
+        // Add a hidden file input
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.id = 'resumeUploader';
+        fileInput.style.display = 'none';
+        fileInput.accept = '.pdf,.doc,.docx';
+        uploadResumeBtn.parentNode.appendChild(fileInput);
+
+        uploadResumeBtn.addEventListener('click', () => {
+            const user = auth.currentUser;
+            if (!user) {
+                alert('Please log in first to upload your resume.');
+                // Optional: open the login modal
+                authModal.style.display = 'flex';
+                return;
+            }
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const user = auth.currentUser;
+            if (!user) {
+                alert('Authentication error. Please log in again.');
+                return;
+            }
+
+            const metadata = {
+                contentType: file.type
+            };
+            const storageRef = storage.ref(`resumes/${user.uid}/${file.name}`);
+            const uploadTask = storageRef.put(file, metadata);
+
+            const notificationArea = document.querySelector('.resume-header');
+            const tempMessage = document.createElement('div');
+            tempMessage.className = 'auth-message auth-success';
+            notificationArea.appendChild(tempMessage);
+
+            uploadTask.on('state_changed',
+                (snapshot) => {
+                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    tempMessage.textContent = `Uploading: ${Math.round(progress)}%`;
+                },
+                (error) => {
+                    console.error("Upload failed:", error);
+                    tempMessage.textContent = 'Upload failed. Please try again.';
+                    tempMessage.className = 'auth-message auth-error';
+                    setTimeout(() => tempMessage.remove(), 3000);
+                },
+                () => {
+                    uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+                        console.log('File available at', downloadURL);
+
+                        const userRef = db.collection('users').doc(user.uid);
+                        userRef.update({
+                            resumeUrl: downloadURL,
+                            resumeFileName: file.name,
+                            updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                        }).then(() => {
+                            tempMessage.textContent = 'Resume uploaded successfully!';
+                            setTimeout(() => tempMessage.remove(), 3000);
+                        }).catch(err => {
+                            console.error("Error updating user profile:", err);
+                            tempMessage.textContent = 'Could not save resume to profile.';
+                            tempMessage.className = 'auth-message auth-error';
+                            setTimeout(() => tempMessage.remove(), 3000);
+                        });
+                    });
+                }
+            );
+        });
+
+        importLinkedInBtn.addEventListener('click', () => alert('LinkedIn import would connect to the LinkedIn API (demo)'));
+        importIndeedBtn.addEventListener('click', () => alert('Indeed import would connect to the Indeed API (demo)'));
+
+        // Chat functionality
+        const chatButton = document.getElementById('chatButton');
+        const chatBox = document.getElementById('chatBox');
+        const closeChat = document.getElementById('closeChat');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+        const chatMessages = document.getElementById('chatMessages');
+
+        if(chatButton && chatBox) {
+            chatButton.addEventListener('click', () => chatBox.classList.toggle('active'));
+            closeChat.addEventListener('click', () => chatBox.classList.remove('active'));
+
+            function sendMessage() {
+                const message = messageInput.value.trim();
+                if(!message) return;
+
+                // User message
+                const userMessage = document.createElement('div');
+                userMessage.className = 'message sent';
+                userMessage.textContent = message;
+                chatMessages.appendChild(userMessage);
+
+                messageInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                // Simulate bot reply after a delay
+                setTimeout(() => {
+                    let botReply = "Thanks for your message! How can I assist you with your job search?";
+                    const m = message.toLowerCase();
+
+                    if(m.includes('resume') || m.includes('cv')) {
+                        botReply = "You can post your resume via our Resume Manager or import from LinkedIn/Indeed.";
+                    } else if(m.includes('job') || m.includes('career')) {
+                        botReply = "We have thousands of opportunities available. Would you like me to help you find relevant positions?";
+                    } else if(m.includes('premium') || m.includes('package')) {
+                        botReply = "Our premium services offer exclusive features for job seekers and employers. Check our Premium section for details.";
+                    }
+
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'message received';
+                    botMessage.textContent = botReply;
+                    chatMessages.appendChild(botMessage);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000);
+            }
+
+            sendButton.addEventListener('click', sendMessage);
+            messageInput.addEventListener('keypress', e => {
+                if(e.key === 'Enter') sendMessage();
+            });
+        }
+
+        // Auth modal controls
+        const openAuth = document.getElementById('openAuth');
+        const authModal = document.getElementById('authModalBackdrop');
+        const authClose = document.getElementById('authClose');
+        const tabLogin = document.getElementById('authTabLogin');
+        const tabSignup = document.getElementById('authTabSignup');
+        const viewLogin = document.getElementById('authLoginView');
+        const viewSignup = document.getElementById('authSignupView');
+        const loginMessage = document.getElementById('loginMessage');
+        const signupMessage = document.getElementById('signupMessage');
+
+        function showLogin() {
+            viewLogin.style.display = 'block';
+            viewSignup.style.display = 'none';
+            tabLogin.style.background = '#f8fafc';
+            tabSignup.style.background = '#fff';
+        }
+
+        function showSignup() {
+            viewLogin.style.display = 'none';
+            viewSignup.style.display = 'block';
+            tabLogin.style.background = '#fff';
+            tabSignup.style.background = '#f8fafc';
+        }
+
+        openAuth.addEventListener('click', () => {
+            authModal.style.display = 'flex';
+            showLogin();
+        });
+
+        authClose.addEventListener('click', () => authModal.style.display = 'none');
+        tabLogin.addEventListener('click', showLogin);
+        tabSignup.addEventListener('click', showSignup);
+
+        // Firebase Authentication
+        // Email/password login
+        const loginForm = document.getElementById('authLoginForm');
+        if(loginForm) {
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = loginForm.email.value;
+                const password = loginForm.password.value;
+
+                auth.signInWithEmailAndPassword(email, password)
+                    .then((userCredential) => {
+                        // Signed in
+                        const user = userCredential.user;
+                        showAuthMessage(loginMessage, `Welcome back, ${user.email}`, true);
+                        setTimeout(() => authModal.style.display = 'none', 1500);
+                    })
+                    .catch((error) => {
+                        const errorMessage = error.message;
+                        showAuthMessage(loginMessage, errorMessage, false);
+                    });
+            });
+        }
+
+        // Email/password signup
+        const signupForm = document.getElementById('authSignupForm');
+        if(signupForm) {
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = signupForm.name.value;
+                const email = signupForm.email.value;
+                const password = signupForm.password.value;
+
+                auth.createUserWithEmailAndPassword(email, password)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+                    // Update auth profile first
+                    return user.updateProfile({
+                        displayName: name
+                    }).then(() => {
+                        // Then create firestore profile
+                        return createUserProfile(user, { name: name });
+                    }).then(() => {
+                        // Pass name along for welcome message
+                        return { name: name };
+                    });
+                })
+                .then((result) => {
+                    showAuthMessage(signupMessage, `Welcome to Employ Nation, ${result.name}!`, true);
+                        setTimeout(() => authModal.style.display = 'none', 1500);
+                    })
+                    .catch((error) => {
+                        const errorMessage = error.message;
+                        showAuthMessage(signupMessage, errorMessage, false);
+                    });
+            });
+        }
+
+        // Google sign-in
+        const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+        function signInWithGoogle() {
+            auth.signInWithPopup(googleProvider)
+                .then((result) => {
+                    const user = result.user;
+                    // Create profile if it doesn't exist, then continue
+                    return createUserProfile(user).then(() => result);
+                })
+                .then((result) => {
+                    const user = result.user;
+                    showAuthMessage(loginMessage, `Welcome, ${user.displayName || user.email}`, true);
+                    setTimeout(() => authModal.style.display = 'none', 1500);
+                }).catch((error) => {
+                    const errorMessage = error.message;
+                    showAuthMessage(loginMessage, errorMessage, false);
+                });
+        }
+
+        document.getElementById('modalGoogle').addEventListener('click', signInWithGoogle);
+        document.getElementById('modalGoogleSignup').addEventListener('click', signInWithGoogle);
+        document.getElementById('heroGoogle').addEventListener('click', signInWithGoogle);
+
+        // Social login placeholders
+        document.getElementById('heroFacebook').addEventListener('click', () => alert('Facebook login not enabled in this demo.'));
+        document.getElementById('heroInstagram').addEventListener('click', () => alert('Instagram login not enabled in this demo.'));
+        document.getElementById('heroLinkedIn').addEventListener('click', () => alert('LinkedIn login not enabled in this demo.'));
+        document.getElementById('heroIndeed').addEventListener('click', () => alert('Indeed login not enabled in this demo.'));
+
+        // Package buttons
+        document.querySelectorAll('.package-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const plan = this.getAttribute('data-plan');
+                alert(`Selected plan: ${plan}\nIn a real application, this would initiate the checkout process.`);
+            });
+        });
+
+        // Show auth messages
+        function showAuthMessage(element, message, isSuccess) {
+            element.textContent = message;
+            element.className = isSuccess ? 'auth-message auth-success' : 'auth-message auth-error';
+            element.style.display = 'block';
+
+            // Hide message after 3 seconds
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 3000);
+        }
+
+        // Post Job Modal Logic
+        const postJobBtn = document.querySelector('a[href="#premium"].cta-button'); // More specific selector
+        const postJobModal = document.getElementById('postJobModalBackdrop');
+        const postJobClose = document.getElementById('postJobClose');
+        const postJobForm = document.getElementById('postJobForm');
+        const postJobMessage = document.getElementById('postJobMessage');
+
+        if (postJobBtn && postJobModal && postJobClose && postJobForm) {
+            postJobBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const user = auth.currentUser;
+                if (user) {
+                    postJobModal.style.display = 'flex';
+                } else {
+                    alert('Please log in to post a job.');
+                    authModal.style.display = 'flex';
+                }
+            });
+
+            postJobClose.addEventListener('click', () => {
+                postJobModal.style.display = 'none';
+            });
+
+            postJobForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const user = auth.currentUser;
+                if (!user) {
+                    showAuthMessage(postJobMessage, 'You must be logged in to post a job.', false);
+                    return;
+                }
+
+                const jobData = {
+                    title: postJobForm.title.value,
+                    company: postJobForm.company.value,
+                    location: postJobForm.location.value,
+                    jobType: postJobForm.jobType.value,
+                    salary: postJobForm.salary.value,
+                    description: postJobForm.description.value,
+                    authorUid: user.uid,
+                    authorEmail: user.email,
+                    postedAt: firebase.firestore.FieldValue.serverTimestamp()
+                };
+
+                db.collection('jobs').add(jobData)
+                    .then(docRef => {
+                        showAuthMessage(postJobMessage, 'Job posted successfully!', true);
+                        console.log("Document written with ID: ", docRef.id);
+                        postJobForm.reset();
+                        setTimeout(() => {
+                            postJobModal.style.display = 'none';
+                            postJobMessage.style.display = 'none';
+                        }, 2000);
+                    })
+                    .catch(error => {
+                        showAuthMessage(postJobMessage, 'Error posting job. Please try again.', false);
+                        console.error("Error adding document: ", error);
+                    });
+            });
+        }
+
+        // Fetch and Display Jobs
+        function fetchAndDisplayJobs() {
+            const jobsGrid = document.getElementById('jobs-grid-container');
+            if (!jobsGrid) return;
+
+            db.collection('jobs').orderBy('postedAt', 'desc').limit(9).get()
+                .then(querySnapshot => {
+                    if (querySnapshot.empty) {
+                        jobsGrid.innerHTML = '<p style="text-align:center;grid-column:1/-1;">No job openings at the moment. Check back soon!</p>';
+                        return;
+                    }
+
+                    let jobsHTML = '';
+                    querySnapshot.forEach(doc => {
+                        const job = doc.data();
+                        const jobDate = job.postedAt ? job.postedAt.toDate().toLocaleDateString() : 'N/A';
+
+                        jobsHTML += `
+                            <div class="job-card">
+                                <div class="job-card-header">
+                                    <h3 class="job-card-title">${job.title || 'No Title'}</h3>
+                                </div>
+                                <h4 class="job-card-company">${job.company || 'No Company'}</h4>
+                                <div class="job-card-details">
+                                    <span><i class="fas fa-map-marker-alt"></i> ${job.location || 'N/A'}</span>
+                                    <span><i class="fas fa-briefcase"></i> ${job.jobType || 'N/A'}</span>
+                                    <span><i class="fas fa-calendar-alt"></i> ${jobDate}</span>
+                                </div>
+                                <p class="job-card-description">${(job.description || '').substring(0, 150)}...</p>
+                                <div class="job-card-actions">
+                                    <a href="#" class="cta-button">View Details</a>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    jobsGrid.innerHTML = jobsHTML;
+                })
+                .catch(error => {
+                    console.error("Error fetching jobs: ", error);
+                    jobsGrid.innerHTML = '<p style="text-align:center;color:red;grid-column:1/-1;">Could not load jobs. Please try again later.</p>';
+                });
+        }
+
+        // Initial load
+        fetchAndDisplayJobs();
+
+        // Update header login state
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                // User is signed in
+                const displayName = user.displayName || user.email.split('@')[0];
+                openAuth.textContent = `Hi, ${displayName}`;
+                openAuth.onclick = () => {
+                    if(confirm('Are you sure you want to sign out?')) {
+                        auth.signOut();
+                    }
+                };
+            } else {
+                // User is signed out
+                openAuth.textContent = 'Login';
+                openAuth.onclick = () => {
+                    authModal.style.display = 'flex';
+                };
+            }
+        });
+    })();
+    </script>
+
+    <!-- Post Job Modal -->
+    <div id="postJobModalBackdrop" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,.6);z-index:2000;align-items:center;justify-content:center">
+        <div style="background:#fff;border-radius:10px;width:600px;max-width:94%;padding:1.5rem;font-family:Poppins">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+                <strong>Post a New Job</strong>
+                <button id="postJobClose" style="background:none;border:none;font-size:1.1rem;cursor:pointer">✕</button>
+            </div>
+            <div id="postJobMessage" class="auth-message" style="display:none;"></div>
+            <form id="postJobForm" style="display:grid;gap:.8rem;max-height:70vh;overflow-y:auto;padding-right:1rem;">
+                <input name="title" placeholder="Job Title (e.g., Senior Frontend Developer)" required style="padding:.8rem;border:1px solid #e2e8f0;border-radius:8px"/>
+                <input name="company" placeholder="Company Name" required style="padding:.8rem;border:1px solid #e2e8f0;border-radius:8px"/>
+                <input name="location" placeholder="Location (e.g., Mohali, Punjab)" required style="padding:.8rem;border:1px solid #e2e8f0;border-radius:8px"/>
+                <select name="jobType" required style="padding:.8rem;border:1px solid #e2e8f0;border-radius:8px;background:#fff;">
+                    <option value="">Select Job Type</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Internship">Internship</option>
+                </select>
+                <input name="salary" placeholder="Salary Range (e.g., ₹10,00,000 - ₹15,00,000 LPA)" style="padding:.8rem;border:1px solid #e2e8f0;border-radius:8px"/>
+                <textarea name="description" placeholder="Job Description" required rows="6" style="padding:.8rem;border:1px solid #e2e8f0;border-radius:8px;resize:vertical;"></textarea>
+                <button type="submit" class="cta-button" style="width:100%;margin-top:.5rem">Post Job</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tawk.to Live Chat -->
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/689be581ddd4a01926709b7a/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>
