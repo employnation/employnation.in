@@ -3,7 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employ Nation - Connecting Talent with Opportunity</title>
+    <title>Employ Nation | Find Jobs in India - Job Portal for Tech, Sales & More</title>
+    <meta name="description" content="Employ Nation is India's leading job portal to find and apply for thousands of jobs online. Connect with top employers in Mohali, Punjab, and across India. Post your resume and get hired today!">
+    <meta name="keywords" content="job portal, find jobs, jobs in india, tech jobs, sales jobs, jobs in mohali, employ nation, job search, career opportunities, recruitment">
+    <link rel="canonical" href="https://employnation.in/" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Employ Nation",
+          "url": "https://employnation.in",
+          "logo": "https://employnation.in/logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-843-701-6711",
+            "contactType": "Customer Service",
+            "areaServed": "IN",
+            "availableLanguage": ["en"]
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "SCF 81, First Floor, Phase 6, Near New Bus Stand",
+            "addressLocality": "Mohali",
+            "addressRegion": "Punjab",
+            "postalCode": "160055",
+            "addressCountry": "IN"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "name": "Employ Nation",
+          "url": "https://employnation.in",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://employnation.in/#jobs?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -30,6 +71,9 @@
         .logo-icon{font-size:2.2rem;margin-right:12px;color:var(--secondary)}
         .logo-text{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.8rem}
         .logo span{color:var(--secondary)}
+        .header-social-links { display: flex; align-items: center; gap: 1rem; margin-left: 2rem; }
+        .header-social-links a { color: #fff; font-size: 1.2rem; transition: color 0.3s ease; }
+        .header-social-links a:hover { color: var(--secondary); }
         nav ul{display:flex;list-style:none}
         nav li{margin-left:2rem}
         nav a{color:#fff;text-decoration:none;font-weight:500;font-size:1.1rem;transition:all .3s ease;padding:.5rem .8rem;border-radius:4px}
@@ -219,7 +263,12 @@
                 <div class="logo-icon"><i class="fas fa-globe-americas"></i></div>
                 <div class="logo-text">Employ<span>Nation</span></div>
             </a>
-            <nav>
+            <div class="header-social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <nav style="margin-left:auto;">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#features">Features</a></li>
@@ -238,16 +287,13 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Connecting Talent with Opportunity</h1>
-            <p>India's premier platform for job seekers and employers to find their perfect match</p>
+            <h1>Your Career Opportunity Awaits</h1>
+            <p>Employ Nation is India's leading job portal, connecting talented professionals with top employers in Mohali, Punjab, and across the nation.</p>
             <div class="social-login">
-                <h3>Login with your account</h3>
+                <h3>Get Started in Seconds</h3>
                 <div class="social-buttons">
                     <button class="social-btn google" id="heroGoogle"><i class="fab fa-google"></i> Gmail</button>
-                    <button class="social-btn facebook" id="heroFacebook"><i class="fab fa-facebook-f"></i> Facebook</button>
-                    <button class="social-btn instagram" id="heroInstagram"><i class="fab fa-instagram"></i> Instagram</button>
                     <button class="social-btn linkedin" id="heroLinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</button>
-                    <button class="social-btn indeed" id="heroIndeed"><i class="fas fa-briefcase"></i> Indeed</button>
                 </div>
             </div>
             <div class="hero-buttons">
@@ -265,32 +311,32 @@
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-img">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1740&q=80" alt="Job Search">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1740&q=80" alt="Professionals searching for jobs on a computer.">
                 </div>
                 <div class="feature-content">
-                    <h3>Smart Job Matching</h3>
-                    <p>Our AI-powered algorithm matches your skills and preferences with the perfect job opportunities.</p>
-                    <a href="#jobs" class="cta-button">Learn More</a>
+                    <h3>Intelligent Job Matching</h3>
+                    <p>Our AI-powered algorithm connects your unique skills and career aspirations with ideal job opportunities.</p>
+                    <a href="#jobs" class="cta-button">Browse Jobs</a>
                 </div>
             </div>
             <div class="feature-card">
                 <div class="feature-img">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1740&q=80" alt="Recruitment">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1740&q=80" alt="HR team conducting an interview in a modern office.">
                 </div>
                 <div class="feature-content">
-                    <h3>Employer Solutions</h3>
-                    <p>Advanced tools to streamline your recruitment process and find the best candidates faster.</p>
-                    <a href="#employers" class="cta-button">Learn More</a>
+                    <h3>Advanced Employer Solutions</h3>
+                    <p>Utilize our advanced toolset to streamline your recruitment pipeline and hire top-tier candidates faster.</p>
+                    <a href="#employers" class="cta-button">For Employers</a>
                 </div>
             </div>
             <div class="feature-card">
                 <div class="feature-img">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1740&q=80" alt="Career Development">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1740&q=80" alt="Team of professionals collaborating and developing their careers.">
                 </div>
                 <div class="feature-content">
-                    <h3>Career Development</h3>
-                    <p>Resources, courses, and mentorship to help you grow professionally and achieve your goals.</p>
-                    <a href="#resources" class="cta-button">Learn More</a>
+                    <h3>Professional Career Growth</h3>
+                    <p>Access exclusive resources, expert-led courses, and mentorship to accelerate your career path.</p>
+                    <a href="#resources" class="cta-button">Get Started</a>
                 </div>
             </div>
         </div>
@@ -631,24 +677,6 @@
         </div>
     </footer>
 
-    <!-- Chat bubble -->
-    <div class="chat-widget" id="inlineChatWidget">
-        <div class="chat-button" id="chatButton"><i class="fas fa-comment-dots"></i></div>
-        <div class="chat-box" id="chatBox">
-            <div class="chat-header">
-                <h3>Employ Nation Support</h3>
-                <button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="message received">Hello! Welcome to Employ Nation. How can I help you today?</div>
-            </div>
-            <div class="chat-input">
-                <input type="text" id="messageInput" placeholder="Type your message..." />
-                <button class="send-button" id="sendButton"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
-
     <!-- Auth Modal -->
     <div id="authModalBackdrop" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,.6);z-index:2000;align-items:center;justify-content:center">
         <div style="background:#fff;border-radius:10px;width:420px;max-width:94%;padding:1rem;font-family:Poppins">
@@ -676,6 +704,8 @@
                 <form id="authSignupForm" style="display:grid;gap:.6rem">
                     <input name="name" placeholder="Full name" required style="padding:.6rem;border:1px solid #e2e8f0;border-radius:8px"/>
                     <input name="email" placeholder="Email" type="email" required style="padding:.6rem;border:1px solid #e2e8f0;border-radius:8px"/>
+                    <input name="mobile" placeholder="Mobile Number" type="tel" required style="padding:.6rem;border:1px solid #e2e8f0;border-radius:8px"/>
+                    <textarea name="requirement" placeholder="Your Requirement (e.g., 'Looking for a full-stack developer role')" required rows="3" style="padding:.6rem;border:1px solid #e2e8f0;border-radius:8px;resize:vertical;"></textarea>
                     <input name="password" placeholder="Password" type="password" required minlength="6" style="padding:.6rem;border:1px solid #e2e8f0;border-radius:8px"/>
                     <button type="submit" class="cta-button" style="width:100%">Create account</button>
                 </form>
@@ -733,6 +763,8 @@
                         uid: user.uid,
                         email: user.email,
                         displayName: user.displayName || additionalData.name || 'Anonymous',
+                        mobile: additionalData.mobile || '',
+                        requirement: additionalData.requirement || '',
                         createdAt: firebase.firestore.FieldValue.serverTimestamp()
                     };
                     console.log("Creating new user profile:", profileData);
@@ -993,6 +1025,8 @@
                 const name = signupForm.name.value;
                 const email = signupForm.email.value;
                 const password = signupForm.password.value;
+                const mobile = signupForm.mobile.value;
+                const requirement = signupForm.requirement.value;
 
                 auth.createUserWithEmailAndPassword(email, password)
                     .then((userCredential) => {
@@ -1002,7 +1036,8 @@
                         displayName: name
                     }).then(() => {
                         // Then create firestore profile
-                        return createUserProfile(user, { name: name });
+                        const additionalData = { name, mobile, requirement };
+                        return createUserProfile(user, additionalData);
                     }).then(() => {
                         // Pass name along for welcome message
                         return { name: name };
@@ -1043,10 +1078,62 @@
         document.getElementById('modalGoogleSignup').addEventListener('click', signInWithGoogle);
         document.getElementById('heroGoogle').addEventListener('click', signInWithGoogle);
 
+        // LinkedIn Custom Auth Flow
+        function signInWithLinkedIn() {
+            const clientId = "86nap02tuu5f72";
+            // This MUST match the redirect URI in your LinkedIn Developer App settings AND the one in the cloud function
+            const redirectUri = "https://us-central1-tricity-jobs-connect.cloudfunctions.net/linkedInAuthCallback";
+            const scope = "profile openid email";
+            // A random string for security (Cross-Site Request Forgery protection)
+            const state = Math.random().toString(36).substring(7);
+
+            // Store state in session storage to verify it on callback
+            sessionStorage.setItem("linkedin_oauth_state", state);
+
+            const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&state=${state}&scope=${encodeURIComponent(scope)}`;
+
+            window.location.href = authUrl;
+        }
+
+        document.getElementById('heroLinkedIn').addEventListener('click', signInWithLinkedIn);
+        document.getElementById('importLinkedIn').addEventListener('click', signInWithLinkedIn);
+
+        // Handle the custom token after redirect from LinkedIn
+        (function handleLinkedInRedirect() {
+            const params = new URLSearchParams(window.location.search);
+            const token = params.get('linkedin_token');
+
+            if (token) {
+                auth.signInWithCustomToken(token)
+                    .then((userCredential) => {
+                        const user = userCredential.user;
+                        console.log("Signed in with LinkedIn custom token:", user);
+                        // Ensure profile exists after custom token sign-in
+                        return createUserProfile(user).then(() => user);
+                    })
+                    .then((user) => {
+                         // Show a welcome message inside the modal
+                        const loginMessage = document.getElementById('loginMessage');
+                        showAuthMessage(loginMessage, `Welcome, ${user.displayName || user.email}!`, true);
+                        authModal.style.display = 'flex';
+                        // Clean the URL
+                        window.history.replaceState({}, document.title, "/");
+                        setTimeout(() => {
+                           authModal.style.display = 'none';
+                        }, 2500);
+                    })
+                    .catch((error) => {
+                        console.error("Error signing in with custom token:", error);
+                        const loginMessage = document.getElementById('loginMessage');
+                        showAuthMessage(loginMessage, 'Failed to sign in with LinkedIn.', false);
+                        authModal.style.display = 'flex';
+                    });
+            }
+        })();
+
         // Social login placeholders
         document.getElementById('heroFacebook').addEventListener('click', () => alert('Facebook login not enabled in this demo.'));
         document.getElementById('heroInstagram').addEventListener('click', () => alert('Instagram login not enabled in this demo.'));
-        document.getElementById('heroLinkedIn').addEventListener('click', () => alert('LinkedIn login not enabled in this demo.'));
         document.getElementById('heroIndeed').addEventListener('click', () => alert('Indeed login not enabled in this demo.'));
 
         // Package buttons
