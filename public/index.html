@@ -108,6 +108,15 @@
         .feature-content{padding:1.8rem}
         .feature-content h3{font-size:1.5rem;margin-bottom:1rem;color:var(--dark)}
         .feature-content p{color:var(--gray);margin-bottom:1.5rem}
+        .popular-searches{padding:6rem 5%;background:linear-gradient(135deg,#f0f7ff 0%,#e0f2fe 100%)}
+        .search-category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;max-width:1400px;margin:0 auto}
+        .search-category-card{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 10px 25px rgba(0,0,0,.05);transition:all .4s ease}
+        .search-category-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,.1)}
+        .search-category-card h3{font-size:1.5rem;margin-bottom:1rem;color:var(--dark)}
+        .search-category-card ul{list-style:none;columns:2;gap:1rem}
+        .search-category-card li{margin-bottom:.8rem}
+        .search-category-card a{color:var(--primary);text-decoration:none;transition:color .3s ease}
+        .search-category-card a:hover{text-decoration:underline;color:var(--primary-dark)}
         .job-listings{padding:6rem 5%;background:#fff}
         .job-card{background:#fff;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.05);transition:all .4s ease;padding:2rem;border:1px solid #e2e8f0}
         .job-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,.1);border-color:var(--primary)}
@@ -189,6 +198,12 @@
         .author-img{width:50px;height:50px;border-radius:50%;overflow:hidden;margin-right:15px;background:var(--gray)}
         .author-info h4{font-weight:600;color:var(--dark)}
         .author-info p{color:var(--gray);font-size:.9rem}
+        .blog-section{padding:6rem 5%;background:linear-gradient(135deg,#f0f7ff 0%,#e0f2fe 100%)}
+        .blog-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.05);transition:all .4s ease; display:flex; flex-direction:column;}
+        .blog-card:hover{transform:translateY(-10px);box-shadow:0 15px 35px rgba(0,0,0,.1)}
+        .blog-card .feature-img{height:220px;}
+        .blog-card .feature-content{flex-grow:1; display:flex; flex-direction:column;}
+        .blog-card .feature-content p{flex-grow:1;}
         .contact{padding:6rem 5%;background:#fff}
         .contact-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3rem}
         .contact-info{display:flex;flex-direction:column;gap:1.5rem}
@@ -328,6 +343,41 @@
         </div>
     </section>
 
+    <section class="popular-searches" id="popular-searches">
+        <div class="section-title">
+            <h2>Find Your Next Opportunity</h2>
+            <p>Explore thousands of job openings in top cities and industries across India. Your dream job in Mohali, Chandigarh, or a leading tech park is just a click away.</p>
+        </div>
+        <div class="search-category-grid">
+            <div class="search-category-card">
+                <h3>Jobs by City</h3>
+                <ul>
+                    <li><a href="#jobs">Jobs in Mohali</a></li>
+                    <li><a href="#jobs">Jobs in Chandigarh</a></li>
+                    <li><a href="#jobs">Jobs in Panchkula</a></li>
+                    <li><a href="#jobs">Jobs in Bengaluru</a></li>
+                    <li><a href="#jobs">Jobs in Pune</a></li>
+                    <li><a href="#jobs">Jobs in Hyderabad</a></li>
+                    <li><a href="#jobs">Jobs in Gurugram</a></li>
+                    <li><a href="#jobs">Jobs in New Delhi</a></li>
+                </ul>
+            </div>
+            <div class="search-category-card">
+                <h3>Jobs by Category</h3>
+                <ul>
+                    <li><a href="#jobs">IT - Software</a></li>
+                    <li><a href="#jobs">Sales & Business Development</a></li>
+                    <li><a href="#jobs">Marketing & Communications</a></li>
+                    <li><a href="#jobs">Customer Service</a></li>
+                    <li><a href="#jobs">Human Resources (HR)</a></li>
+                    <li><a href="#jobs">Finance & Accounting</a></li>
+                    <li><a href="#jobs">Engineering</a></li>
+                    <li><a href="#jobs">Healthcare</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <section class="job-listings" id="jobs">
         <div class="section-title">
             <h2>Latest Job Openings</h2>
@@ -335,6 +385,10 @@
         </div>
         <div class="features-grid" id="jobs-grid-container">
             <!-- Job cards will be inserted here by JavaScript -->
+        </div>
+        <div id="load-more-container" style="text-align: center; margin-top: 2rem;">
+            <button id="loadMoreJobsBtn" class="cta-button" style="display: none;">Load More Jobs</button>
+            <p id="jobs-end-message" style="display: none; color: var(--gray);">No more jobs to show.</p>
         </div>
     </section>
 
@@ -594,6 +648,35 @@
         </div>
     </section>
 
+    <section class="blog-section" id="blog">
+        <div class="section-title">
+            <h2>Career Advice & Industry News</h2>
+            <p>Read our blog for tips, insights, and trends to help you advance your career.</p>
+        </div>
+        <div class="features-grid">
+            <div class="blog-card">
+                <div class="feature-img">
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1740&q=80" alt="A person writing a resume on a laptop.">
+                </div>
+                <div class="feature-content">
+                    <h3>5 Tips to Create a Resume that Gets Noticed by Recruiters in India</h3>
+                    <p>Learn how to tailor your resume to stand out in the competitive Indian job market and catch the eye of top recruiters...</p>
+                    <a href="blog-resume-tips.html" class="cta-button">Read More</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="feature-img">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d044b403258?auto=format&fit=crop&w=1740&q=80" alt="A bustling city view of a tech hub in India.">
+                </div>
+                <div class="feature-content">
+                    <h3>Navigating the Tech Job Market in Mohali & Chandigarh: A 2025 Guide</h3>
+                    <p>An inside look at the top skills in demand, major tech companies hiring, and salary expectations in the Tricity tech hub...</p>
+                    <a href="blog-tricity-guide.html" class="cta-button">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="contact">
         <div class="section-title">
             <h2>Contact Us</h2>
@@ -625,10 +708,8 @@
                 <div class="footer-logo">Employ<span>Nation</span></div>
                 <p>India's leading job portal connecting talented professionals with top employers across various industries.</p>
                 <div class="social-buttons">
-                    <button class="social-btn"><i class="fab fa-facebook-f"></i></button>
-                    <button class="social-btn"><i class="fab fa-twitter"></i></button>
-                    <button class="social-btn"><i class="fab fa-linkedin-in"></i></button>
-                    <button class="social-btn"><i class="fab fa-instagram"></i></button>
+                    <a href="https://www.facebook.com/profile.php?id=61576186772461" target="_blank" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/employnation/" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-links">
@@ -891,127 +972,6 @@
             );
         });
 
-        importLinkedInBtn.addEventListener('click', () => alert('LinkedIn import would connect to the LinkedIn API (demo)'));
-        importIndeedBtn.addEventListener('click', () => alert('Indeed import would connect to the Indeed API (demo)'));
-
-        // Auth modal controls
-        const openAuth = document.getElementById('openAuth');
-        const authModal = document.getElementById('authModalBackdrop');
-        const authClose = document.getElementById('authClose');
-        const tabLogin = document.getElementById('authTabLogin');
-        const tabSignup = document.getElementById('authTabSignup');
-        const viewLogin = document.getElementById('authLoginView');
-        const viewSignup = document.getElementById('authSignupView');
-        const loginMessage = document.getElementById('loginMessage');
-        const signupMessage = document.getElementById('signupMessage');
-
-        function showLogin() {
-            viewLogin.style.display = 'block';
-            viewSignup.style.display = 'none';
-            tabLogin.style.background = '#f8fafc';
-            tabSignup.style.background = '#fff';
-        }
-
-        function showSignup() {
-            viewLogin.style.display = 'none';
-            viewSignup.style.display = 'block';
-            tabLogin.style.background = '#fff';
-            tabSignup.style.background = '#f8fafc';
-        }
-
-        openAuth.addEventListener('click', () => {
-            authModal.style.display = 'flex';
-            showLogin();
-        });
-
-        authClose.addEventListener('click', () => authModal.style.display = 'none');
-        tabLogin.addEventListener('click', showLogin);
-        tabSignup.addEventListener('click', showSignup);
-
-        // Firebase Authentication
-        // Email/password login
-        const loginForm = document.getElementById('authLoginForm');
-        if(loginForm) {
-            loginForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const email = loginForm.email.value;
-                const password = loginForm.password.value;
-
-                auth.signInWithEmailAndPassword(email, password)
-                    .then((userCredential) => {
-                        // Signed in
-                        const user = userCredential.user;
-                        showAuthMessage(loginMessage, `Welcome back, ${user.email}`, true);
-                        setTimeout(() => authModal.style.display = 'none', 1500);
-                    })
-                    .catch((error) => {
-                        const errorMessage = error.message;
-                        showAuthMessage(loginMessage, errorMessage, false);
-                    });
-            });
-        }
-
-        // Email/password signup
-        const signupForm = document.getElementById('authSignupForm');
-        if(signupForm) {
-            signupForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const name = signupForm.name.value;
-                const email = signupForm.email.value;
-                const password = signupForm.password.value;
-                const mobile = signupForm.mobile.value;
-                const requirement = signupForm.requirement.value;
-
-                auth.createUserWithEmailAndPassword(email, password)
-                    .then((userCredential) => {
-                        const user = userCredential.user;
-                    // Update auth profile first
-                    return user.updateProfile({
-                        displayName: name
-                    }).then(() => {
-                        // Then create firestore profile
-                        const additionalData = { name, mobile, requirement };
-                        return createUserProfile(user, additionalData);
-                    }).then(() => {
-                        // Pass name along for welcome message
-                        return { name: name };
-                    });
-                })
-                .then((result) => {
-                    showAuthMessage(signupMessage, `Welcome to Employ Nation, ${result.name}!`, true);
-                        setTimeout(() => authModal.style.display = 'none', 1500);
-                    })
-                    .catch((error) => {
-                        const errorMessage = error.message;
-                        showAuthMessage(signupMessage, errorMessage, false);
-                    });
-            });
-        }
-
-        // Google sign-in
-        const googleProvider = new firebase.auth.GoogleAuthProvider();
-
-        function signInWithGoogle() {
-            auth.signInWithPopup(googleProvider)
-                .then((result) => {
-                    const user = result.user;
-                    // Create profile if it doesn't exist, then continue
-                    return createUserProfile(user).then(() => result);
-                })
-                .then((result) => {
-                    const user = result.user;
-                    showAuthMessage(loginMessage, `Welcome, ${user.displayName || user.email}`, true);
-                    setTimeout(() => authModal.style.display = 'none', 1500);
-                }).catch((error) => {
-                    const errorMessage = error.message;
-                    showAuthMessage(loginMessage, errorMessage, false);
-                });
-        }
-
-        document.getElementById('modalGoogle').addEventListener('click', signInWithGoogle);
-        document.getElementById('modalGoogleSignup').addEventListener('click', signInWithGoogle);
-        document.getElementById('heroGoogle').addEventListener('click', signInWithGoogle);
-
         // LinkedIn Custom Auth Flow
         function signInWithLinkedIn() {
             const clientId = "86nap02tuu5f72";
@@ -1068,7 +1028,8 @@
         // Social login placeholders
         document.getElementById('heroFacebook').addEventListener('click', () => alert('Facebook login not enabled in this demo.'));
         document.getElementById('heroInstagram').addEventListener('click', () => alert('Instagram login not enabled in this demo.'));
-        document.getElementById('heroIndeed').addEventListener('click', () => alert('Indeed login not enabled in this demo.'));
+        document.getElementById('importIndeed').addEventListener('click', () => alert('Indeed import would connect to the Indeed API (demo)'));
+
 
         // Package buttons
         document.querySelectorAll('.package-button').forEach(button => {
@@ -1151,47 +1112,82 @@
         }
 
         // Fetch and Display Jobs
-        function fetchAndDisplayJobs() {
-            const jobsGrid = document.getElementById('jobs-grid-container');
+        let lastVisibleJob = null;
+        const jobsPerPage = 6;
+        const loadMoreJobsBtn = document.getElementById('loadMoreJobsBtn');
+        const jobsEndMessage = document.getElementById('jobs-end-message');
+        const jobsGrid = document.getElementById('jobs-grid-container');
+
+        function fetchAndDisplayJobs(startAfterDoc = null) {
             if (!jobsGrid) return;
 
-            db.collection('jobs').orderBy('postedAt', 'desc').limit(9).get()
-                .then(querySnapshot => {
-                    if (querySnapshot.empty) {
-                        jobsGrid.innerHTML = '<p style="text-align:center;grid-column:1/-1;">No job openings at the moment. Check back soon!</p>';
-                        return;
-                    }
+            loadMoreJobsBtn.textContent = 'Loading...';
+            loadMoreJobsBtn.disabled = true;
 
-                    let jobsHTML = '';
-                    querySnapshot.forEach(doc => {
-                        const job = doc.data();
-                        const jobDate = job.postedAt ? job.postedAt.toDate().toLocaleDateString() : 'N/A';
+            let query = db.collection('jobs')
+                          .orderBy('postedAt', 'desc')
+                          .limit(jobsPerPage);
 
-                        jobsHTML += `
-                            <div class="job-card">
-                                <div class="job-card-header">
-                                    <h3 class="job-card-title">${job.title || 'No Title'}</h3>
-                                </div>
-                                <h4 class="job-card-company">${job.company || 'No Company'}</h4>
-                                <div class="job-card-details">
-                                    <span><i class="fas fa-map-marker-alt"></i> ${job.location || 'N/A'}</span>
-                                    <span><i class="fas fa-briefcase"></i> ${job.jobType || 'N/A'}</span>
-                                    <span><i class="fas fa-calendar-alt"></i> ${jobDate}</span>
-                                </div>
-                                <p class="job-card-description">${(job.description || '').substring(0, 150)}...</p>
-                                <div class="job-card-actions">
-                                    <a href="#" class="cta-button">View Details</a>
-                                </div>
-                            </div>
-                        `;
-                    });
-                    jobsGrid.innerHTML = jobsHTML;
-                })
-                .catch(error => {
-                    console.error("Error fetching jobs: ", error);
-                    jobsGrid.innerHTML = '<p style="text-align:center;color:red;grid-column:1/-1;">Could not load jobs. Please try again later.</p>';
+            if (startAfterDoc) {
+                query = query.startAfter(startAfterDoc);
+            }
+
+            query.get().then(querySnapshot => {
+                if (querySnapshot.empty && !startAfterDoc) {
+                    jobsGrid.innerHTML = '<p style="text-align:center;grid-column:1/-1;">No job openings at the moment. Check back soon!</p>';
+                    loadMoreJobsBtn.style.display = 'none';
+                    return;
+                }
+
+                querySnapshot.forEach(doc => {
+                    const job = doc.data();
+                    const jobDate = job.postedAt ? job.postedAt.toDate().toLocaleDateString() : 'N/A';
+
+                    const jobCard = document.createElement('div');
+                    jobCard.className = 'job-card';
+                    jobCard.innerHTML = `
+                        <div class="job-card-header">
+                            <h3 class="job-card-title">${job.title || 'No Title'}</h3>
+                        </div>
+                        <h4 class="job-card-company">${job.company || 'No Company'}</h4>
+                        <div class="job-card-details">
+                            <span><i class="fas fa-map-marker-alt"></i> ${job.location || 'N/A'}</span>
+                            <span><i class="fas fa-briefcase"></i> ${job.jobType || 'N/A'}</span>
+                            <span><i class="fas fa-calendar-alt"></i> ${jobDate}</span>
+                        </div>
+                        <p class="job-card-description">${(job.description || '').substring(0, 150)}...</p>
+                        <div class="job-card-actions">
+                            <a href="#" class="cta-button">View Details</a>
+                        </div>
+                    `;
+                    jobsGrid.appendChild(jobCard);
                 });
+
+                // Get the last visible document
+                lastVisibleJob = querySnapshot.docs[querySnapshot.docs.length - 1];
+
+                loadMoreJobsBtn.textContent = 'Load More Jobs';
+                loadMoreJobsBtn.disabled = false;
+
+                // Show or hide the 'Load More' button
+                if (querySnapshot.docs.length < jobsPerPage) {
+                    loadMoreJobsBtn.style.display = 'none';
+                    jobsEndMessage.style.display = 'block';
+                } else {
+                    loadMoreJobsBtn.style.display = 'inline-block';
+                    jobsEndMessage.style.display = 'none';
+                }
+
+            }).catch(error => {
+                console.error("Error fetching jobs: ", error);
+                jobsGrid.innerHTML += '<p style="text-align:center;color:red;grid-column:1/-1;">Could not load jobs. Please try again later.</p>';
+            });
         }
+
+        // Event listener for the 'Load More' button
+        loadMoreJobsBtn.addEventListener('click', () => {
+            fetchAndDisplayJobs(lastVisibleJob);
+        });
 
         // Initial load
         fetchAndDisplayJobs();

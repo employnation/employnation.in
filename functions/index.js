@@ -31,8 +31,7 @@ exports.linkedInAuthCallback = functions.https.onRequest((req, res) => {
 
       // IMPORTANT: The redirect_uri must EXACTLY match one of the URIs
       // you configured in your LinkedIn Developer App settings.
-      // This will be the URL of this function itself.
-      const redirectUri = `https://${process.env.GCLOUD_PROJECT}.firebaseapp.com/linkedInAuthCallback`;
+      const redirectUri = `https://us-central1-tricity-jobs-connect.cloudfunctions.net/linkedInAuthCallback`;
 
       // 1. Exchange authorization code for access token
       const tokenResponse = await axios.post(
@@ -75,7 +74,7 @@ exports.linkedInAuthCallback = functions.https.onRequest((req, res) => {
       });
 
       // 5. Redirect user back to the main site with the token
-      return res.redirect(`/?linkedin_token=${firebaseToken}`);
+      return res.redirect(`https://employnation.in/?linkedin_token=${firebaseToken}`);
 
     } catch (error) {
       console.error("Error during LinkedIn auth:", error.response ? error.response.data : error.message);
