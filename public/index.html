@@ -267,9 +267,8 @@
                 <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#features">Features</a></li>
+                        <li><a href="#features">Services</a></li>
                         <li><a href="#resume">Resume</a></li>
-                        <li><a href="#integration">Integration</a></li>
                         <li><a href="#premium">Premium</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -294,7 +293,6 @@
                 <h3>Get Started in Seconds</h3>
                 <div class="social-buttons">
                     <button class="social-btn google" id="heroGoogle"><i class="fab fa-google"></i> Gmail</button>
-                    <button class="social-btn linkedin" id="heroLinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</button>
                 </div>
             </div>
             <div class="hero-buttons">
@@ -412,109 +410,6 @@
                     <p>Seamlessly import your LinkedIn profile as a resume</p>
                     <div class="integration-badge">Direct Integration</div>
                     <button class="cta-button" id="importLinkedIn">Connect LinkedIn</button>
-                </div>
-                <div class="resume-option">
-                    <div class="resume-icon"><i class="fas fa-briefcase"></i></div>
-                    <h3>Import from Indeed</h3>
-                    <p>Import your Indeed profile and resume with one click</p>
-                    <div class="integration-badge">Direct Integration</div>
-                    <button class="cta-button" id="importIndeed">Connect Indeed</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="integration" id="integration">
-        <div class="section-title">
-            <h2>Advanced Platform Features</h2>
-            <p>These functionalities require backend integration for full implementation</p>
-        </div>
-        <div class="tabs-container">
-            <div class="tabs-header">
-                <button class="tab-btn active" data-tab="social-login"><i class="fas fa-sign-in-alt"></i> Social Login</button>
-                <button class="tab-btn" data-tab="job-matching"><i class="fas fa-robot"></i> AI Job Matching</button>
-                <button class="tab-btn" data-tab="resume-parser"><i class="fas fa-file-alt"></i> Resume Parsing</button>
-                <button class="tab-btn" data-tab="notifications"><i class="fas fa-bell"></i> Notifications</button>
-            </div>
-            <div class="tabs-content">
-                <div class="tab-pane active" id="social-login">
-                    <div class="tab-content-header">
-                        <div class="tab-icon"><i class="fas fa-sign-in-alt"></i></div>
-                        <div class="tab-text"><h3>Social Media Login Integration</h3><p>Secure authentication using popular social platforms</p></div>
-                    </div>
-                    <div class="integration-details">
-                        <div class="integration-info">
-                            <p>Allow users to sign in using existing social accounts. We use OAuth 2.0 for secure, privacy-preserving authentication.</p>
-                            <p>With user permission, basic profile info can pre-fill their account.</p>
-                            <div class="backend-note">
-                                <h4><i class="fas fa-server"></i> Backend Implementation Required</h4>
-                                <p>For more providers than Google, server-side token verification and account linking are needed.</p>
-                            </div>
-                        </div>
-                        <div class="integration-diagram">
-                            <div class="diagram-title">Authentication Flow</div>
-                            <div class="diagram-flow">
-                                <div class="flow-step"><div class="step-icon"><i class="fas fa-user"></i></div><div class="step-text">User</div></div>
-                                <div class="flow-step"><div class="step-icon"><i class="fas fa-globe"></i></div><div class="step-text">Employ Nation</div></div>
-                                <div class="flow-step"><div class="step-icon"><i class="fab fa-google"></i></div><div class="step-text">Social Platform</div></div>
-                                <div class="flow-arrow"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="job-matching">
-                    <div class="tab-content-header"><div class="tab-icon"><i class="fas fa-robot"></i></div><div class="tab-text"><h3>AI-Powered Job Matching</h3><p>Intelligent matching of candidates with opportunities</p></div></div>
-                    <div class="integration-details">
-                        <div class="integration-info">
-                            <p>Algorithms evaluate skills, experience, and preferences to recommend relevant roles.</p>
-                            <div class="backend-note"><h4><i class="fas fa-server"></i> Backend Implementation Required</h4><p>Requires ML services and data pipelines.</p></div>
-                        </div>
-                        <div class="integration-diagram">
-                            <div class="diagram-title">Matching Process</div>
-                            <div class="diagram-flow">
-                                <div class="flow-step"><div class="step-icon"><i class="fas fa-user-graduate"></i></div><div class="step-text">Candidate</div></div>
-                                <div class="flow-step"><div class="step-icon"><i class="fas fa-cogs"></i></div><div class="step-text">AI Engine</div></div>
-                                <div class="flow-step"><div class="step-icon"><i class="fas fa-briefcase"></i></div><div class="step-text">Jobs</div></div>
-                                <div class="flow-arrow"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="resume-parser">
-                    <div class="tab-content-header"><div class="tab-icon"><i class="fas fa-file-alt"></i></div><div class="tab-text"><h3>Resume Parsing & Analysis</h3><p>Automated extraction of candidate information</p></div></div>
-                    <div class="integration-details">
-                        <div class="integration-info">
-                            <p>Extracts structured data (experience, education, skills) from uploaded resumes.</p>
-                            <div class="backend-note"><h4><i class="fas fa-server"></i> Backend Implementation Required</h4><p>Needs document processing and storage services.</p></div>
-                        </div>
-                        <div class="integration-diagram">
-                            <div class="diagram-title">Parsing Workflow</div>
-                            <div class="diagram-flow">
-                                <div class="flow-step"><div class="step-icon"><i class="fas fa-file-upload"></i></div><div class="step-text">Upload</div></div>
-                                <div class="flow-step"><div class="step-icon"><i class="fas fa-cogs"></i></div><div class="step-text">Parser</div></div>
-                                <div class="flow-step"><div class="step-icon"><i class="fas fa-database"></i></div><div class="step-text">Structured Data</div></div>
-                                <div class="flow-arrow"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="notifications">
-                    <div class="tab-content-header"><div class="tab-icon"><i class="fas fa-bell"></i></div><div class="tab-text"><h3>Real-time Notifications</h3><p>Instant updates for job seekers and employers</p></div></div>
-                    <div class="integration-details">
-                        <div class="integration-info">
-                            <p>Alerts for new matches, application status, and messages via email/push.</p>
-                            <div class="backend-note"><h4><i class="fas fa-server"></i> Backend Implementation Required</h4><p>Integrations like Firebase Cloud Messaging and SMTP are needed.</p></div>
-                        </div>
-                        <div class="integration-diagram">
-                            <div class="diagram-title">Notification Flow</div>
-                            <div class="diagram-flow">
-                                <div class="flow-step"><div class="step-icon"><i class="fas fa-database"></i></div><div class="step-text">Event</div></div>
-                                <div class="flow-step"><div class="step-icon"><i class="fas fa-server"></i></div><div class="step-text">Service</div></div>
-                                <div class="flow-step"><div class="step-icon"><i class="fas fa-mobile-alt"></i></div><div class="step-text">Devices</div></div>
-                                <div class="flow-arrow"></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -857,18 +752,6 @@
             });
         });
 
-        // Feature tabs
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabPanes = document.querySelectorAll('.tab-pane');
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabPanes.forEach(p => p.classList.remove('active'));
-                btn.classList.add('active');
-                document.getElementById(btn.dataset.tab).classList.add('active');
-            });
-        });
-
         // Premium tabs
         const packageTabs = document.querySelectorAll('.package-tab');
         const jobSeekersSection = document.getElementById('job-seekers');
@@ -896,7 +779,6 @@
         // Resume options
         const uploadResumeBtn = document.getElementById('uploadResumeBtn');
         const importLinkedInBtn = document.getElementById('importLinkedIn');
-        const importIndeedBtn = document.getElementById('importIndeed');
 
         // Add a hidden file input
         const fileInput = document.createElement('input');
@@ -989,7 +871,6 @@
             window.location.href = authUrl;
         }
 
-        document.getElementById('heroLinkedIn').addEventListener('click', signInWithLinkedIn);
         document.getElementById('importLinkedIn').addEventListener('click', signInWithLinkedIn);
 
         // Handle the custom token after redirect from LinkedIn
@@ -1025,10 +906,8 @@
             }
         })();
 
-        // Social login placeholders
-        document.getElementById('heroFacebook').addEventListener('click', () => alert('Facebook login not enabled in this demo.'));
-        document.getElementById('heroInstagram').addEventListener('click', () => alert('Instagram login not enabled in this demo.'));
-        document.getElementById('importIndeed').addEventListener('click', () => alert('Indeed import would connect to the Indeed API (demo)'));
+        // Placeholder for other social logins if added in the future
+        // document.getElementById('importIndeed').addEventListener('click', () => alert('Indeed import would connect to the Indeed API (demo)'));
 
 
         // Package buttons
