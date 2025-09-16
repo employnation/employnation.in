@@ -81,6 +81,33 @@
         nav a:hover{background:rgba(255,255,255,.15)}
         .cta-button{background:var(--secondary);color:#fff;padding:.7rem 1.5rem;border-radius:30px;font-weight:600;transition:all .3s ease;text-decoration:none;display:inline-block;box-shadow:0 4px 6px rgba(251,146,60,.3)}
         .cta-button:hover{background:#ea580c;transform:translateY(-2px);box-shadow:0 6px 12px rgba(251,146,60,.4)}
+
+        /* Mobile Hamburger Menu */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+        .hamburger-menu span {
+            height: 3px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        .hamburger-menu.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-menu.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
         .hero{background:linear-gradient(rgba(30,58,138,.9),rgba(37,99,235,.85)),url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=2069&q=80');background-size:cover;background-position:center;color:#fff;padding:6rem 5%;text-align:center}
         .hero-content{max-width:800px;margin:0 auto}
         .hero h1{font-family:'Montserrat',sans-serif;font-size:3.5rem;margin-bottom:1.5rem;line-height:1.2}
@@ -95,6 +122,22 @@
         .google{background:rgba(234,67,53,.8)} .facebook{background:rgba(59,89,152,.8)}
         .instagram{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
         .linkedin{background:rgba(0,119,181,.8)} .indeed{background:rgba(0,101,255,.8)}
+
+        /* Services Section */
+        .services {padding:6rem 5%;background:#fff}
+        .services-tabs {display:flex;justify-content:center;margin-bottom:3rem;gap:1rem}
+        .service-tab {padding:1rem 2rem;border:none;background:#e2e8f0;border-radius:30px;font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:500;cursor:pointer;transition:all .3s ease}
+        .service-tab.active {background:var(--primary);color:#fff}
+        .services-content {max-width:1200px;margin:0 auto}
+        .service-pane {display:none;animation:fadeIn .5s ease}
+        .service-pane.active {display:block}
+        .service-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem}
+        .service-card {background:#f8fafc;border-radius:12px;padding:2rem;box-shadow:0 5px 15px rgba(0,0,0,.05);transition:all .3s ease}
+        .service-card:hover {transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.1)}
+        .service-card h3 {font-size:1.4rem;margin-bottom:1rem;color:var(--primary)}
+        .service-card p {color:var(--gray);margin-bottom:1.5rem}
+        .service-icon {font-size:2.5rem;color:var(--primary);margin-bottom:1.5rem}
+
         .features{padding:6rem 5%;background:#fff}
         .section-title{text-align:center;margin-bottom:4rem}
         .section-title h2{font-family:'Montserrat',sans-serif;font-size:2.5rem;color:var(--dark);margin-bottom:1rem}
@@ -217,6 +260,75 @@
         .form-group label{display:block;margin-bottom:.5rem;font-weight:500;color:var(--dark)}
         .form-group input,.form-group textarea{width:100%;padding:.8rem 1rem;border:1px solid #cbd5e1;border-radius:8px;font-family:'Poppins',sans-serif;font-size:1rem}
         .form-group textarea{height:150px;resize:vertical}
+
+        /* Mobile App Prompt */
+        .mobile-app-prompt {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            padding: 15px;
+            z-index: 999;
+            display: none;
+            max-width: 320px;
+            animation: slideInUp 0.5s ease;
+        }
+        .mobile-app-prompt.active {
+            display: block;
+        }
+        .app-prompt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .app-prompt-header h3 {
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        .close-prompt {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+        .app-prompt-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .app-download-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: #f8fafc;
+            text-decoration: none;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        .app-download-btn:hover {
+            background: #e2e8f0;
+        }
+        .app-icon {
+            font-size: 1.5rem;
+        }
+        .app-text {
+            flex: 1;
+        }
+        .app-text span {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        .app-text strong {
+            font-weight: 600;
+        }
+
         footer{background:var(--dark);color:#fff;padding:4rem 5% 2rem}
         .footer-container{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:3rem}
         .footer-logo{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:800;margin-bottom:1rem}
@@ -230,6 +342,18 @@
         .footer-links a:hover{color:var(--secondary)}
         .footer-bottom{max-width:1400px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid #334155;text-align:center;color:#94a3b8}
         .credit a{color:var(--secondary);text-decoration:none;font-weight:600}
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
         @media (max-width: 992px){
             .hero h1{font-size:2.8rem}
             .hero-buttons{flex-direction:column;align-items:center}
@@ -238,11 +362,40 @@
             .resume-options{flex-direction:column}
         }
         @media (max-width: 768px){
-            .header-container{flex-direction:column}
-            nav{display: none;}
-            .header-right{gap:1rem; margin-top:1rem;}
-            nav ul{flex-direction:column;align-items:center}
-            nav li{margin:.5rem 0}
+            .header-container{flex-direction:row}
+            .hamburger-menu {
+                display: flex;
+            }
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);
+                padding: 1rem;
+                box-shadow: 0 4px 12px rgba(0,0,0,.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                z-index: 999;
+            }
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav li {
+                margin: 0;
+            }
+            .header-right {
+                gap: 1rem;
+            }
+            .header-social-links {
+                display: none;
+            }
             .hero h1{font-size:2.3rem}
             .hero p{font-size:1.1rem}
             .social-buttons{flex-direction:column;align-items:center}
@@ -250,6 +403,14 @@
             .chat-box{width:300px;height:400px}
             .tabs-header{flex-direction:column}
             .package-tabs{flex-direction:column}
+            .services-tabs {
+                flex-direction: column;
+            }
+            .mobile-app-prompt {
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
         }
         .auth-message {padding: 10px; margin: 10px 0; border-radius: 5px; text-align: center;}
         .auth-success {background: #dcfce7; color: #166534;}
@@ -263,11 +424,19 @@
                 <div class="logo-icon"><i class="fas fa-globe-americas"></i></div>
                 <div class="logo-text">Employ<span>Nation</span></div>
             </a>
+
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <div class="header-right">
                 <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#features">Services</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#features">Features</a></li>
                         <li><a href="#resume">Resume</a></li>
                         <li><a href="#premium">Premium</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -298,6 +467,97 @@
             <div class="hero-buttons">
                 <a href="#resume" class="cta-button">Find a Job</a>
                 <a href="#premium" class="cta-button">Hire Talent</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Comprehensive Services</h2>
+            <p>We offer end-to-end solutions for both job seekers and employers</p>
+        </div>
+
+        <div class="services-tabs">
+            <button class="service-tab active" data-service="job-seekers-services">For Job Seekers</button>
+            <button class="service-tab" data-service="employers-services">For Employers</button>
+            <button class="service-tab" data-service="career-services">Career Development</button>
+        </div>
+
+        <div class="services-content">
+            <div class="service-pane active" id="job-seekers-services">
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-search"></i></div>
+                        <h3>Smart Job Matching</h3>
+                        <p>Our AI-powered algorithm matches your skills, experience, and preferences with the perfect job opportunities.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                        <h3>Resume Building</h3>
+                        <p>Create professional, ATS-friendly resumes with our easy-to-use builder and expert templates.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-bell"></i></div>
+                        <h3>Job Alerts</h3>
+                        <p>Get notified about new opportunities that match your criteria via email or push notifications.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Application Tracking</h3>
+                        <p>Track all your job applications in one place and monitor their status in real-time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-pane" id="employers-services">
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+                        <h3>Job Posting</h3>
+                        <p>Reach thousands of qualified candidates with our targeted job posting platform.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-filter"></i></div>
+                        <h3>Candidate Screening</h3>
+                        <p>Advanced filtering tools to quickly identify the most qualified applicants.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-database"></i></div>
+                        <h3>Talent Database</h3>
+                        <p>Access our extensive database of pre-screened professionals across industries.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                        <h3>Recruitment Analytics</h3>
+                        <p>Data-driven insights to optimize your hiring process and reduce time-to-hire.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-pane" id="career-services">
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>Skill Development</h3>
+                        <p>Access courses and training programs to enhance your skills and marketability.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-comments"></i></div>
+                        <h3>Career Counseling</h3>
+                        <p>Get personalized advice from industry experts to guide your career path.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-mock-interview"></i></div>
+                        <h3>Interview Preparation</h3>
+                        <p>Practice mock interviews and receive feedback to improve your performance.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Networking Events</h3>
+                        <p>Connect with industry professionals through our virtual and in-person events.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -611,6 +871,7 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#premium">Premium Plans</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -638,6 +899,30 @@
             <p class="credit">Developed by <a href="https://www.britpunjabi.com" target="_blank" rel="noopener">Progressive Build Solutions</a></p>
         </div>
     </footer>
+
+    <!-- Mobile App Download Prompt -->
+    <div class="mobile-app-prompt" id="mobileAppPrompt">
+        <div class="app-prompt-header">
+            <h3>Get Our Mobile App</h3>
+            <button class="close-prompt" id="closePrompt">&times;</button>
+        </div>
+        <div class="app-prompt-content">
+            <a href="#" class="app-download-btn">
+                <div class="app-icon"><i class="fab fa-google-play"></i></div>
+                <div class="app-text">
+                    <span>GET IT ON</span>
+                    <strong>Google Play</strong>
+                </div>
+            </a>
+            <a href="#" class="app-download-btn">
+                <div class="app-icon"><i class="fab fa-apple"></i></div>
+                <div class="app-text">
+                    <span>DOWNLOAD ON THE</span>
+                    <strong>App Store</strong>
+                </div>
+            </a>
+        </div>
+    </div>
 
     <!-- Auth Modal -->
     <div id="authModalBackdrop" style="display:none;position:fixed;inset:0;background:rgba(2,6,23,.6);z-index:2000;align-items:center;justify-content:center">
@@ -712,6 +997,53 @@
         const db = firebase.firestore();
         const storage = firebase.storage();
 
+        // Mobile detection
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+
+        // Show mobile app prompt if on mobile
+        function showMobileAppPrompt() {
+            if (isMobileDevice()) {
+                // Wait 5 seconds before showing the prompt
+                setTimeout(() => {
+                    const prompt = document.getElementById('mobileAppPrompt');
+                    prompt.classList.add('active');
+                }, 5000);
+            }
+        }
+
+        // Close mobile app prompt
+        document.getElementById('closePrompt').addEventListener('click', function() {
+            document.getElementById('mobileAppPrompt').classList.remove('active');
+        });
+
+        // Hamburger menu functionality
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const nav = document.querySelector('nav');
+
+        hamburgerMenu.addEventListener('click', function() {
+            this.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Services tabs functionality
+        const serviceTabs = document.querySelectorAll('.service-tab');
+        const servicePanes = document.querySelectorAll('.service-pane');
+
+        serviceTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and panes
+                serviceTabs.forEach(t => t.classList.remove('active'));
+                servicePanes.forEach(p => p.classList.remove('active'));
+
+                // Add active class to clicked tab and corresponding pane
+                tab.classList.add('active');
+                const serviceId = tab.getAttribute('data-service');
+                document.getElementById(serviceId).classList.add('active');
+            });
+        });
+
         // Helper to create user profile in Firestore
         function createUserProfile(user, additionalData = {}) {
             if (!user) return Promise.reject("No user provided");
@@ -748,6 +1080,12 @@
                 if(target){
                     e.preventDefault();
                     target.scrollIntoView({behavior: 'smooth'});
+                }
+
+                // Close mobile menu if open
+                if (hamburgerMenu.classList.contains('active')) {
+                    hamburgerMenu.classList.remove('active');
+                    nav.classList.remove('active');
                 }
             });
         });
@@ -1090,6 +1428,9 @@
                 };
             }
         });
+
+        // Show mobile app prompt
+        showMobileAppPrompt();
     })();
     </script>
 
