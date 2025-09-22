@@ -462,6 +462,7 @@
                 <h3>Get Started in Seconds</h3>
                 <div class="social-buttons">
                     <button class="social-btn google" id="heroGoogle"><i class="fab fa-google"></i> Gmail</button>
+                    <button class="social-btn facebook" id="heroFacebook"><i class="fab fa-facebook-f"></i> Facebook</button>
                 </div>
             </div>
             <div class="hero-buttons">
@@ -944,6 +945,7 @@
                 </form>
                 <div style="margin-top:.6rem;display:flex;gap:.6rem">
                     <button id="modalGoogle" class="social-btn google" style="flex:1"><i class="fab fa-google"></i> Google</button>
+                    <button id="modalFacebook" class="social-btn facebook" style="flex:1"><i class="fab fa-facebook-f"></i> Facebook</button>
                 </div>
             </div>
             <div id="authSignupView" style="display:none">
@@ -958,6 +960,7 @@
                 </form>
                 <div style="margin-top:.6rem;display:flex;gap:.6rem">
                     <button id="modalGoogleSignup" class="social-btn google" style="flex:1"><i class="fab fa-google"></i> Google</button>
+                    <button id="modalFacebookSignup" class="social-btn facebook" style="flex:1"><i class="fab fa-facebook-f"></i> Facebook</button>
                 </div>
             </div>
         </div>
@@ -1071,6 +1074,68 @@
                 return Promise.reject(error);
             });
         }
+
+        // Google Sign-In
+        function signInWithGoogle() {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            auth.signInWithPopup(provider)
+                .then((result) => {
+                    const user = result.user;
+                    console.log("Signed in with Google:", user);
+                    return createUserProfile(user).then(() => user);
+                })
+                .then((user) => {
+                    const loginMessage = document.getElementById('loginMessage');
+                    showAuthMessage(loginMessage, `Welcome, ${user.displayName || user.email}!`, true);
+                    authModal.style.display = 'flex';
+                    setTimeout(() => {
+                        authModal.style.display = 'none';
+                    }, 2500);
+                })
+                .catch((error) => {
+                    console.error("Google Sign-In Error:", error);
+                    const loginMessage = document.getElementById('loginMessage');
+                    showAuthMessage(loginMessage, `Google Sign-In Failed: ${error.message}`, false);
+                    authModal.style.display = 'flex';
+                });
+        }
+
+        document.getElementById('heroGoogle').addEventListener('click', signInWithGoogle);
+        document.getElementById('modalGoogle').addEventListener('click', signInWithGoogle);
+        document.getElementById('modalGoogleSignup').addEventListener('click', signInWithGoogle);
+
+        // Facebook Sign-In
+        function signInWithFacebook() {
+            const provider = new firebase.auth.FacebookAuthProvider();
+            auth.signInWithPopup(provider)
+                .then((result) => {
+                    const user = result.user;
+                    console.log("Signed in with Facebook:", user);
+                    return createUserProfile(user).then(() => user);
+                })
+                .then((user) => {
+                    const loginMessage = document.getElementById('loginMessage');
+                    showAuthMessage(loginMessage, `Welcome, ${user.displayName || user.email}!`, true);
+                    authModal.style.display = 'flex';
+                    setTimeout(() => {
+                        authModal.style.display = 'none';
+                    }, 2500);
+                })
+                .catch((error) => {
+                    console.error("Facebook Sign-In Error:", error);
+                    const loginMessage = document.getElementById('loginMessage');
+                    if (error.code === 'auth/account-exists-with-different-credential') {
+                        showAuthMessage(loginMessage, 'An account already exists with the same email address but different sign-in credentials. Please sign in using the original method.', false);
+                    } else {
+                        showAuthMessage(loginMessage, `Facebook Sign-In Failed: ${error.message}`, false);
+                    }
+                    authModal.style.display = 'flex';
+                });
+        }
+
+        document.getElementById('heroFacebook').addEventListener('click', signInWithFacebook);
+        document.getElementById('modalFacebook').addEventListener('click', signInWithFacebook);
+        document.getElementById('modalFacebookSignup').addEventListener('click', signInWithFacebook);
 
         // Smooth anchors
         document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -1194,7 +1259,7 @@
 
         // LinkedIn Custom Auth Flow
         function signInWithLinkedIn() {
-            const clientId = "86nap02tuu5f72";
+            const clientId = "78k9k43luixtuf";
             // This MUST match the redirect URI in your LinkedIn Developer App settings AND the one in the cloud function
             const redirectUri = "https://us-central1-tricity-jobs-connect.cloudfunctions.net/linkedInAuthCallback";
             const scope = "profile openid email";
